@@ -1,0 +1,1461 @@
+@import "compass/css3"
+/***************************************** FONTS *********************************************/
+@import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300,600,700)
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,300)
+@import url(http://fonts.googleapis.com/css?family=Advent+Pro:400,700,300)
+
+@font-face
+	font-family: "roboto"
+	src: url('../../../../../fonts/roboto-regular.eot')
+	src: url('../../../../../fonts/roboto-regular.eot?#iefix') format("embedded-opentype"), url('../../../../../fonts/roboto-regular.woff2') format("woff2"), url('../../../../../fonts/roboto-regular.woff') format("woff"), url('../../../../../fonts/roboto-regular.ttf') format("truetype"), url('../../../../../fonts/roboto-regular.svg#roboto') format("svg")
+	font-weight: normal
+	font-style: normal
+/***************************************** VARIABLES *********************************************/
+$amarillo: #f3ce11
+$azul: #22415a
+$azul-claro: #2b5997
+$bg-color: #2f3438
+$bg-fuerte: #26292c
+$bg-th: #2c7c97
+$bg-td: #215e73
+$celeste: #00c0ff
+$naranja: #e8362b
+$red: #e0040b
+$text-color: #414141
+$text-title: #282828
+$text-claro: #e7e7e7
+$white: #fefefe
+/***************************************** TAGS *********************************************/
+html, body
+	height: 100%
+	width: 100%
+
+a
+	&:link
+		color: $white
+	&:visited
+		color: $white
+	&:hover
+		color: $white
+	&:active
+		color: $white
+
+body
+	color: $text-color
+	font-family: 'Source Sans Pro', sans-serif
+	font-size: 16px
+
+	&.modal-open
+		overflow: visible
+		padding-right: 0 !important
+
+h1, h2, h3, h4, h5, h6
+	color: $text-title
+	font-weight: 700
+	text-transform: uppercase
+
+	.btn
+		margin: 0
+
+header
+	background-color: $bg-color
+	border: none
+	margin: 0
+	min-height: 24px !important
+
+	.welcome-user
+		color: $white
+		position: relative
+		text-align: right
+
+		> figure
+			display: inline-block
+			vertical-align: middle
+
+			img
+				width: 16px
+
+		> p
+			cursor: pointer
+			display: inline-block
+			font-size: 0.75em
+			margin: 0 10px 0 0
+
+			span
+				font-size: 1.17em
+				font-weight: 600
+
+		.info_user
+			background-color: $bg-fuerte
+			color: $white
+			display: none
+			min-height: 100px
+			padding: 10px
+			position: absolute
+			right: 0
+			text-align: left
+			+transition(all 0.4s ease-in)
+			width: 285px
+
+			figure
+				display: inline-block
+				margin: 0 5px 5px 0
+				vertical-align: top
+
+			.actions_users
+				a
+					font-size: 0.8125em
+
+			.detail_info_user
+				display: inline-block
+				vertical-align: top
+
+				h2
+					font-size: 1em
+					font-weight: 600
+					margin: 0 0 5px 0
+
+				p
+					font-size: 0.8125em
+					margin: 0
+
+		&:hover
+			> p
+				color: $naranja
+
+			.info_user
+				display: block
+
+/* html
+	overflow: hidden */
+
+input[type="radio"], input[type="checkbox"]
+	opacity: 0
+	position: absolute
+	width: 18px
+	z-index: 12
+
+	&:checked, &:focus
+		outline: none !important
+
+	&:checked
+		+ .lbl
+			&::before
+				background-color: #F5F8FC
+				border-color: #adb8c0
+				+box-shadow(rgba(0, 0, 0, 0.05) 0 1px 2px, rgba(0, 0, 0, 0.05) 0px -15px 10px -12px inset, rgba(255, 255, 255, 0.1) 15px 10px -12px inset)
+				display: inline-block
+				content: "\e013"
+
+		&:active
+			+ .lbl
+				&::before
+					+box-shadow(rgba(0, 0, 0, 0.05) 0 1px 2px, rgba(0, 0, 0, 0.1) 0px 1px 3px inset)
+
+	&:hover
+		+ .lbl
+			&::before
+				border-color: #1c7aad
+			&:hover
+				&::before
+					border-color: #1c7aad
+	&:active
+		+ .lbl
+			&::before
+				+box-shadow(rgba(0, 0, 0, 0.05) 0 1px 2px, rgba(0, 0, 0, 0.1) 0px 1px 3px inset)
+
+	+ .lbl
+		//display: inline-block
+		font-size: 0.875em
+		font-weight: 300
+		//line-height: 20px
+		margin: 0
+		//min-height: 14px
+		//min-width: 14px
+		//position: relative
+		z-index: 11
+
+		&::before
+			background-color: #FAFAFA
+			border: 1px solid #CCC
+			+border-radius(3px)
+			+box-shadow(rgba(0, 0, 0, 0.05) 0 1px 2px)
+			color: #2091cf
+			content: "\a0"
+			display: inline-block
+			//font-family: Arial, Helvetica, sans-serif
+			font-size: 36px
+			font-weight: normal
+			height: 16px
+			line-height: 13px
+			//min-width: 13px
+			margin-right: 5px
+			//margin-top: -4px
+			text-align: center
+			vertical-align: middle
+			width: 16px
+
+		&.favorite
+			font-size: 14px
+			font-weight: 300
+
+			&::before
+				background-color: transparent
+				border: none
+				+border-radius(0)
+				+box-shadow(none)
+				color: #d9d9d9
+				content: "\f006"
+				font-size: 28px
+				font-family: FontAwesome
+				margin-right: 15px
+
+		> span.bg-gusto
+			background-image: url("../../../../../images/sprites-front.png")
+			background-repeat: no-repeat
+			display: inline-block
+			height: 27px
+			margin-right: 5px
+			vertical-align: top
+			width: 27px
+
+		.text-subrayado
+			text-decoration: underline
+
+input[type="radio"]
+	&:checked
+		+ .lbl
+			&::before
+				content: "\2022"
+				line-height: 8px
+
+			&.anexos
+				&::before
+					color: $red
+					content: "\f0c8"
+					font-family: FontAwesome
+					font-size: 11px
+					line-height: 15px
+
+input[type="checkbox"]
+	&:checked
+		+ .lbl
+			&::before
+				font-family: 'Glyphicons Halflings'
+				font-size: 13px
+
+			&.favorite
+				&::before
+					color: $amarillo
+					content: "\f005"
+					font-family: FontAwesome
+					font-size: 28px
+
+			&.anexos
+				&::before
+					color: $red
+					content: "\f0c8"
+					font-family: FontAwesome
+					font-size: 11px
+					line-height: 15px
+
+p
+	font-weight: 300
+
+::-webkit-input-placeholder
+	color: $text-claro
+	font-family: 'Open Sans'
+	font-weight: 300
+::-moz-placeholder
+	color: $text-claro
+	font-family: 'Open Sans'
+	font-weight: 300
+\:-ms-input-placeholder
+	color: $text-claro
+	font-family: 'Open Sans'
+	font-weight: 300
+input:-moz-placeholder
+	color: $text-claro
+	font-family: 'Open Sans'
+	font-weight: 300
+
+::-moz-selection
+	background: #fe57a1
+	color: #fff
+	text-shadow: none
+::selection
+	background: #fe57a1
+	color: #fff
+	text-shadow: none
+/***************************************** CLASS *********************************************/
+.btn
+	color: $white
+	+border-radius(0)
+
+	&.btn-blue
+		background-color: $azul
+		+opacity(0.9)
+		+transition(all 0.4s ease-in-out)
+
+		&:hover
+			+opacity(1)
+
+	&.btn-orange
+		background-color: $naranja
+		+opacity(0.9)
+		+transition(all 0.4s ease-in-out)
+
+		&:hover
+			+opacity(1)
+
+	&.btn-forget
+		background-color: $red
+
+		&:hover
+			background-color: rgba($red, 0.9)
+
+	&:link
+		color: $white
+	&:visited
+		color: $white
+	&:hover
+		color: $white
+	&:active
+		color: $white
+	&:focus
+		color: $white
+
+.calendar
+	margin-top: 10px
+
+	.sel-month
+		background-color: $azul
+		left: 0
+		margin: 0 10%
+		padding: 10px
+		position: absolute
+		top: 6%
+
+		ul
+			margin: 0
+			li
+				background-color: $celeste
+				color: $white
+				font-size: 0.875em
+				font-weight: 300
+				list-style: none
+
+	.tb-calendar
+		border-collapse: separate
+		border-spacing: 2px 3px
+		width: 100%
+
+		tr
+			color: $white
+			margin-bottom: 3px
+
+			th
+				text-align: center
+
+				&:nth-child(2)
+					background-color: $bg-color
+					font-weight: 600
+					text-transform: uppercase
+
+			td
+				background-color: $bg-td
+				cursor: pointer
+				font-family: "roboto"
+				font-size: 0.75em
+				padding: 6px 3px
+				text-align: center
+
+				&.day
+					position: relative
+
+				&:hover, &.selected
+					background-color: $white
+					color: $naranja
+
+				> .highlight
+					color: $naranja
+					font-size: 1.25em
+
+				.content-day
+					bottom: 3px
+					height: 5px
+					left: 3px
+					position: absolute
+
+					span
+						display: inline-block
+						font-size: 8px
+						height: 5px
+						vertical-align: top
+						width: 5px
+
+						&.birthday
+							background-color: $celeste
+
+						&.weekend
+							background-color: $azul
+
+						&.anniversary
+							background-color: $red
+
+						&.holiday
+							background-color: $amarillo
+
+			&:nth-child(2)
+				td
+					background-color: $bg-th
+					cursor: auto
+					padding: 3px
+
+					&:hover
+						background-color: $bg-th
+						color: $white
+
+	.wrapper-list-reminder
+		height: auto
+		margin: 10px 0
+		overflow: hidden
+
+		.list-reminder
+			overflow: hidden
+			padding: 10px 10px 0 10px
+
+			h3, h4
+				color: $white
+				margin: 0
+
+			h3
+				font-size: 1em
+				font-weight: normal
+				margin-bottom: 5px
+
+			h4
+				font-size: 0.875em
+				font-weight: 600
+
+			p
+				font-size: 0.875em
+				a
+					text-decoration: underline
+					&:hover
+						color: $azul
+
+			&:nth-child(2n)
+				background-color: rgba(black, 0.25)
+				border-top: 1px solid $azul
+
+.form-control
+	font-family: 'Open Sans'
+	font-weight: 300
+
+.form-horizontal
+	.checkbox
+		margin-bottom: 5px
+		padding-left: 15px
+
+	.radio
+		padding-top: 0
+
+	.checkbox, .radio
+		label
+			margin-right: 20px
+			padding-left: 0
+
+	.form-group
+		> label
+			font-weight: 400
+
+		> .help-block
+			padding-left: 15px
+
+		.date
+			+ i.form-control-feedback
+				right: 40px
+
+.list-tags
+	margin: 10px 0 0 0
+	li
+		background-color: $naranja
+		color: $white
+		margin-right: 5px
+		padding: 3px 16px
+		position: relative
+
+		a
+			font-size: 0.8125em
+			line-height: 1em
+			position: absolute
+			top: 0
+			right: 0
+
+.main-container
+	margin-left: 180px
+	margin-right: 250px
+	margin-top: 24px
+	position: relative
+
+	.main-content
+		left: 0
+		padding-top: 10px
+		position: relative
+
+		.container
+			max-width: none !important
+
+			form
+				ul
+					li
+						.del-schedule
+							color: $red
+							margin-left: 10px
+
+					+ button
+						margin-bottom: 50px
+
+			p
+				color: $text-color
+
+				.color-type
+					display: inline-block
+					height: 20px
+					margin-right: 10px
+					vertical-align: top
+					width: 20px
+
+					&.anniversary
+						background-color: $red
+
+					&.birthday
+						background-color: $celeste
+
+					&.holiday
+						background-color: $amarillo
+
+					&.weekend
+						background-color: $azul
+
+				i.favorite
+					color: $amarillo
+					font-size: 1.5em
+					margin-right: 5px
+
+			ul
+				padding: 0
+
+				li
+					font-weight: 300
+					list-style: none
+					margin-bottom: 5px
+					span
+						font-weight: 600
+
+					ul
+						li
+							.horario-day, .horario-hour
+								display: inline-block
+								vertical-align: top
+							.horario-day
+								width: 15%
+
+							.horario-hour
+								span
+									display: block
+									font-weight: 300
+
+
+			.content
+				p
+					a
+						color: $text-color
+
+			.wrapper-box
+				+background-image(linear-gradient(white, #dddddd))
+				+box-shadow(rgba($text-color, 0.6) 2px 2px 10px)
+				display: inline-block
+				margin: 0 10px 20px 0
+				padding: 10px
+				vertical-align: top
+				width: 49%
+
+				&:nth-child(2n+1)
+					margin-right: 0
+
+				&.box-add
+					border: 1px dashed #bababa
+
+				figure
+					background-color: $text-claro
+					border: 1px solid rgba(black, 0.16)
+					display: inline-block
+					margin-right: 10px
+					padding: 5px
+					vertical-align: top
+					width: 25%
+
+					img
+						margin: 0 auto
+
+				.box-content
+					display: inline-block
+					vertical-align: top
+					width: 71%
+
+					h5
+						font-weight: 600
+						margin-top: 25px
+
+						a
+							color: $text-title
+
+							&:hover
+								color: $text-color
+
+					ul
+						li
+							font-size: 0.875em
+							margin-bottom: 0
+
+			.wrapper-likes
+				ul
+					margin-left: 0
+					li
+						background-image: url("../../../../images/sprites-front.png")
+						background-repeat: no-repeat
+						height: 36px
+						vertical-align: top
+						width: 36px
+
+						&.salud
+							background-position: 0 -407px
+
+							&.checked
+								background-position: 0 -371px
+
+						&.educacion
+							background-position: -36px -407px
+
+							&.checked
+								background-position: -36px -371px
+
+						&.comida
+							background-position: -72px -407px
+
+							&.checked
+								background-position: -72px -371px
+
+						&.viaje
+							background-position: -108px -407px
+
+							&.checked
+								background-position: -108px -371px
+
+						&.ropa
+							background-position: -144px -407px
+
+							&.checked
+								background-position: -144px -371px
+
+						&.entretenimiento
+							background-position: -180px -407px
+
+							&.checked
+								background-position: -180px -371px
+
+						&.tecnologia
+							background-position: -216px -407px
+
+							&.checked
+								background-position: -216px -371px
+
+						&.deportes
+							background-position: -252px -407px
+
+							&.checked
+								background-position: -252px -371px
+
+.modal
+	.modal-dialog
+		margin: 8% auto 0 auto
+
+		.modal-content
+			border: 7px solid $red
+			+border-radius(20px)
+
+			.modal-header
+				border-bottom: none
+				padding: 10px 15px
+
+				.close
+					background-color: $red
+					+border-radius(50%)
+					color: $white
+					height: 32px
+					+opacity(0.7)
+					position: absolute
+					right: -16px
+					top: -16px
+					+transition(all 0.4s ease-in-out)
+					width: 32px
+
+					&:hover
+						+opacity(1)
+
+				.modal-title
+					font-weight: 700
+					text-transform: uppercase
+
+			.modal-body
+				padding: 0 15px 10px 15px
+
+				p
+					color: $text-color
+					font-size: 0.875em
+					text-align: center
+
+					strong
+						font-weight: 700
+						text-transform: uppercase
+
+			.modal-footer
+				border-top: none
+				padding: 10px 15px
+
+.modal-register-user, .modal-register-password, .modal-login-user
+	.modal-dialog
+		width: 500px
+
+		.modal-content
+			.modal-body
+				form
+					padding: 0 50px
+					position: relative
+
+					button
+						background-color: $red
+						border: none
+						color: $white
+						display: block
+						font-weight: 300
+						margin: 0 auto
+						+opacity(1)
+						padding: 5px 15px
+						text-transform: uppercase
+						+transition(all 0.4s ease-in-out)
+
+						&:hover
+							+opacity(0.9)
+							text-decoration: underline
+
+					input[type="text"], input[type="email"], input[type="password"]
+						border: 4px solid rgba(black, 0.47)
+						+border-radius(10px)
+						font-family: 'Open Sans', sans-serif
+						height: 43px
+						padding: 10px 12px
+
+						&#user_birthday
+							border-right: none
+							+border-bottom-right-radius(0)
+							+border-top-right-radius(0)
+
+							+ span
+								border: 4px solid rgba(black, 0.47)
+								+border-bottom-right-radius(10px)
+								+border-top-right-radius(10px)
+								border-left: none
+
+						+ i
+							top: 5px
+
+					.checkbox
+						label
+							padding-left: 0
+
+					.login-facebook
+						background: transparent url('../../../../images/sprites-front.png') 0 -73px no-repeat
+						display: block
+						height: 38px
+						margin: 0 auto 10px auto
+						+scale(1)
+						+transition(all 0.4s ease-in-out)
+						width: 221px
+
+						&:hover
+							+scale(1.1)
+
+
+					.separator-o
+						width: 100%
+
+						&::before, &::after
+							border-top: 1px solid rgba($text-color, 0.7)
+							content: ''
+							display: inline-block
+							vertical-align: middle
+							width: 47%
+
+						&::before
+							margin-right: 5px
+						&::after
+							margin-left: 5px
+
+.modal-login-user
+	.modal-dialog
+		.modal-content
+			.modal-body
+				text-align: center
+
+				> a
+					color: $text-color
+					text-decoration: underline
+
+					&:hover
+						color: $text-color
+
+.modal-register-intereses
+	.modal-dialog
+		.modal-content
+			.modal-body
+				form
+					input[type="checkbox"]:not(old),
+					input[type="radio"]:not(old)
+						width: 28px
+						margin: 0
+						padding: 0
+						opacity: 0
+
+					input[type="checkbox"]:not(old) + label,
+					input[type="radio"]:not(old) + label
+						display: inline-block
+						margin-left: -28px
+						padding-left: 28px
+						background: url('../../../../images/checks.png') no-repeat 0 0
+						line-height: 24px
+
+					input[type="checkbox"]:not(old):checked + label
+						background-position: 0 -24px
+
+					input[type="radio"]:not(old):checked + label
+						background-position: 0 -48px
+
+.modal-register-password
+	.modal-dialog
+		.modal-content
+			.modal-body
+				form
+					button
+						top: 10% !important
+
+					.help-block
+						margin: 0
+
+.modal-type-reminder
+	.modal-dialog
+		width: 500px
+
+		.modal-content
+			border: none
+			+border-radius(0)
+
+			.modal-header
+				h4
+					font-size: 0.875em
+					font-weight: 600
+
+			.modal-body
+				padding: 10px 15px
+
+				ul
+					li
+						cursor: pointer
+						padding: 10px
+						vertical-align: top
+
+						figure
+							margin: 0 auto
+							width: 65px
+
+							img
+								+border-radius(50%)
+								+transition(all 0.2s ease-in)
+								+scale(1)
+
+						h4
+							font-size: 0.8125em
+							font-weight: 300
+							margin: 10px 0 0 0
+
+						&:hover
+							figure
+								img
+									border: 5px solid $naranja
+									+scale(1.1)
+
+.modal-video
+	.modal-dialog
+		width: 640px
+
+		.modal-content
+			border: none
+			+border-radius(0)
+			height: 385px
+			position: relative
+
+			.close
+				background-color: $red
+				+border-radius(50%)
+				color: $white
+				height: 32px
+				+opacity(0.7)
+				position: absolute
+				right: -20px
+				top: -20px
+				+transition(all 0.4s ease-in-out)
+				width: 32px
+
+				&:hover
+					+opacity(1)
+
+.modal-register-shop
+	.modal-dialog
+		.modal-content
+			.modal-body
+				form
+					margin: 0 auto
+					text-align: center
+					width: 80%
+
+.nicescroll-rails
+	z-index: 1000 !important
+
+.options
+	+background-image(linear-gradient(white, #dddddd))
+	margin-bottom: 20px
+	padding: 20px 10px
+
+	h4
+		font-size: 1em
+		font-weight: 600
+		margin: 0 0 15px 0
+		text-transform: uppercase
+
+	h5
+		font-weight: 300
+		margin-bottom: 5px
+
+	.form-group
+		margin-left: 0
+		margin-right: 0
+
+		label
+			font-size: 0.875em
+			font-weight: 300
+
+	.checkbox
+		margin-bottom: 10px
+		padding-left: 0
+
+		#rem_email_friend
+			font-size: 0.875em
+			font-weight: 300
+			margin-top: 10px
+			padding: 3px 5px
+			width: 100%
+
+		#sel-notification
+			font-size: 0.875em
+			font-weight: 300
+
+		.lbl
+			font-size: 1em
+
+	.wrapper-featured
+		background-color: #f5f5f5
+		border: 1px dashed #bababa
+		padding: 15px
+
+		figure.img-thumbs
+			img
+				margin: 0 auto
+
+		i
+			font-size: 3em
+
+		p
+			font-size: .875em
+			margin: 0
+			a
+				color: $text-title
+				font-weight: 600
+				text-decoration: underline
+
+.popover
+	.popover-content
+		overflow: hidden
+		.checkbox
+			label
+				padding: 0
+		.hours
+			margin-bottom: 10px
+			input
+				width: 40%
+		.list_days
+			margin-bottom: 10px
+			ul
+				margin: 0
+				li
+					color: $white
+					cursor: pointer
+					font-size: 0.75em
+					list-style: none
+					margin-right: 3px
+
+					&.blue
+						background-color: $azul
+
+					&.orange
+						background-color: $naranja
+
+.section-page
+	height: 100%
+
+.sidebar-left
+	background-color: $bg-color
+	height: auto
+	left: 0
+	position: fixed
+	width: 180px
+	z-index: 1021
+
+	.logo
+		a
+			display: block
+			img
+				margin: 0 auto
+				width: 75%
+
+.sidebar-right
+	background-color: $celeste
+	height: auto
+	padding: 10px
+	position: fixed
+	right: 0
+	top: 24px
+	width: 250px
+	z-index: 1021
+
+	#toggle-menu
+		background-color: $naranja
+		border: none
+		left: -30px
+		padding: 3px 5px
+		position: absolute
+		top: 0
+
+		i
+			color: $white
+			font-weight: 300
+
+	.mCSB_inside
+		> .mCSB_container
+			margin-right: 0
+
+	.mCSB_scrollTools
+		width: 8px
+
+// .title
+// 	color: $white
+// 	font-size: 2em
+// 	font-weight: 600
+// 	margin: 0 0 5px 0
+// 	+text-shadow(rgba(black, 0.62) 2px 2px 1px)
+// 	text-transform: uppercase
+
+// .title-h2
+// 	font-size: 1.25em
+// 	font-weight: 700
+// 	margin: 0 0 10px 0
+// 	text-transform: uppercase
+
+// 	.btn
+// 		margin: 0
+
+// .title-h3
+// 	font-size: 1.125em
+// 	font-weight: 600
+// 	margin: 0 0 10px 0
+
+// 	span
+// 		font-weight: 400
+
+// .title-h4
+// 	font-size: 1em
+// 	font-weight: 600
+
+.width-auto
+	width: auto !important
+
+.wrapper-btn-register
+	margin-top: 20px
+
+.wrapper-extranet
+	background: #131313 url('../../../../../images/bg-main-extranet.png') 0 0 repeat-x
+	min-height: 100%
+	padding-bottom: 30px
+	// width: 100%
+
+	.logo
+		margin-bottom: 20px
+		img
+			margin: 0 auto
+			width: 13%
+
+	.panel-login
+		background-color: $azul-claro
+		+border-radius(0)
+		+box-shadow(rgba(black, 0.7) 2px 2px 10px)
+		margin: 0 auto
+		width: 80%
+
+		.panel-body
+			padding: 20px
+
+			p
+				color: $white
+
+			.wrapper-form
+				&:first-child
+					background: transparent url('../../../../../images/bg-border.png') right 0 repeat-y
+					margin-top: 50px
+
+				form
+					margin: 0 auto
+					width: 85%
+
+					select
+						margin-bottom: 15px
+
+					.form-group
+						margin-bottom: 10px
+						.form-control
+							+border-radius(0)
+
+						.fv-icon-no-label
+							right: 20px
+
+						.checkbox
+							> label
+								padding: 0
+
+							.lbl
+								color: $white
+
+				h4
+					color: $white
+					font-weight: 400
+
+					span
+						font-weight: 700
+						text-transform: none
+
+				input[type="checkbox"]
+					+ .lbl
+						&::before
+							border: 2px solid black
+							height: 18px
+							width: 18px
+
+.wrapper-login
+	position: fixed
+	top: 20px
+	right: 10%
+	z-index: 9
+
+	a
+		color: $white
+
+.wrapper-reminder
+	+background-image(linear-gradient(white, #dddddd))
+	+box-shadow(rgba($text-color, 0.6) 2px 2px 10px)
+	margin-bottom: 20px
+	padding: 10px
+	position: relative
+
+	&.birthday
+		border-top: 8px solid $celeste
+
+		.bg-background
+			background-position: 0 -449px
+			display: block
+			height: 56px
+			width: 72px
+
+	&.anniversary
+		border-top: 8px solid $red
+
+		.bg-background
+			background-position: -72px -449px
+			display: block
+			height: 56px
+			width: 63px
+
+	&.holiday
+		border-top: 8px solid $amarillo
+
+		.bg-background
+			background-position: -135px -449px
+			display: block
+			height: 56px
+			width: 72px
+
+	&.weekend
+		border-top: 8px solid $azul
+
+		.bg-background
+			background-position: -207px -449px
+			display: block
+			height: 56px
+			width: 69px
+
+	h5
+		color: $text-title
+		font-size: 1em
+		font-weight: 600
+		margin: 0
+
+		a
+			color: $text-title
+			+transition(all 0.2s ease-in)
+
+			&:hover
+				color: $celeste
+				text-decoration: none
+
+	p
+		color: $text-color
+		font-size: .8125em !important
+		font-weight: 300
+		margin-bottom: 5px
+
+		a, span
+			color: $text-color
+			font-weight: 700
+
+		.btn
+			color: $white !important
+			margin: 0
+
+	.bg-background
+		background-color: transparent
+		background-image: url("../../../../images/sprites-front.png")
+		bottom: 0
+		position: absolute
+		right: 0
+
+	.favorite
+		color: $amarillo
+		position: absolute
+		right: 10px
+		top: 10px
+
+		a
+			color: $amarillo
+
+	.likes
+		margin: 10px 0
+
+		ul
+			margin-left: 0
+			li
+				background-image: url("../../../../images/sprites-front.png")
+				background-repeat: no-repeat
+				height: 20px
+				vertical-align: top
+				width: 20px
+
+				&.salud
+					background-position: 0 -351px
+
+					&.checked
+						background-position: 0 -331px
+
+				&.educacion
+					background-position: -20px -351px
+
+					&.checked
+						background-position: -20px -331px
+
+				&.comida
+					background-position: -40px -351px
+
+					&.checked
+						background-position: -40px -331px
+
+				&.viaje
+					background-position: -60px -351px
+
+					&.checked
+						background-position: -60px -331px
+
+				&.ropa
+					background-position: -80px -351px
+
+					&.checked
+						background-position: -80px -331px
+
+				&.entretenimiento
+					background-position: -100px -351px
+
+					&.checked
+						background-position: -100px -331px
+
+				&.tecnologia
+					background-position: -120px -351px
+
+					&.checked
+						background-position: -120px -331px
+
+				&.deportes
+					background-position: -140px -351px
+
+					&.checked
+						background-position: -140px -331px
+
+	.quick-edition
+		display: none
+		position: absolute
+		right: 10px
+		z-index: 99999
+
+		.btn
+			margin: 0
+
+	&:hover
+		.quick-edition
+			display: block
+
+.wrapper-type-reminder
+	background: transparent url('../../../../images/sprites-front.png') 0 -253px no-repeat
+	cursor: pointer
+	display: none
+	height: 77px
+	margin: 0 auto 10px auto
+	position: relative
+	width: 267px
+
+	&.default
+		display: block
+
+	figure
+		left: 7px
+		position: absolute
+		vertical-align: top
+		top: 4px
+
+	h4
+		left: 40%
+		margin: 0
+		position: absolute
+		top: 25%
+
+/***************************************** IDS *********************************************/
+#first-page
+	background: transparent url('../../../../images/bg-first.jpg') 0 0 no-repeat
+	background-size: 100% 100%
+
+	.link-scroll
+		background: transparent url('../../../../images/sprites-front.png') -73px 0 no-repeat
+		display: block
+		height: 26px
+		margin: 50px auto 20px auto
+		+opacity(0.5)
+		+transition(all 0.4s ease-in)
+		width: 25px
+
+		&:hover
+			+opacity(1)
+
+	.logo
+		margin-top: 50px
+
+		img
+			margin: 0 auto
+
+	.slogan-small
+		color: $white
+		font-weight: 300
+		margin: 5px auto
+		+text-shadow(rgba(black, 0.62) 2px 2px 1px)
+		width: 50%
+
+#popup_container
+	z-index: 9999999999 !important
+
+#second-page
+	background: transparent url('../../../../images/bg-second.jpg') 0 0 no-repeat
+	background-size: 100% 100%
+	position: relative
+
+	header
+		background-color: transparent
+		margin-bottom: 20px
+		.logo
+			img
+				width: 10%
+
+	p
+		width: 70%
+
+	.title
+		margin-bottom: 20px
+
+	.wrapper-bg-video
+		bottom: 0
+		position: absolute
+		right: -20px
+		text-align: right
+		+transition(all 0.4s ease-in)
+
+		a
+			background: transparent url('../../../../images/sprites-front.png') 0 -111px no-repeat
+			display: block
+			height: 140px
+			position: absolute
+			top: 30%
+			right: 3%
+			width: 140px
+
+		&:hover
+			right: 0
+
+/***************************************** MEDIAS QUERIES *********************************************/
+@media only screen and (max-width: 640px)
+
+@media only screen and (max-width: 767px)
+
+
+@media only screen and (min-width: 768px) and (max-width: 991px)
+	#second-page
+		.wrapper-bg-video
+			right: -10px
+
+			a
+				right: 0
+				top: 20%
+
+			img
+				width: 70%
+
+@media only screen and (min-width: 992px) and (max-width: 1199px)
+	#second-page
+		p
+			width: 60%
+
+//@media only screen and (max-width: 1199px)
+
+@media only screen and (min-width: 1200px)

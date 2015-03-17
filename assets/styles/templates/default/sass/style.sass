@@ -1,0 +1,409 @@
+@import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700)
+@import "compass/css3/"
+@import "compass/css3/opacity"
+@import "compass/css3/transition"
+
+//$RESET
+html,body
+	width      : 100%
+	height     : 100%
+	font-size  : 16px
+	font-family: 'Source Sans Pro', sans-serif
+
+
+//VARIABLES
+$gray-color          : #676767
+$gray-second-color   : #f3f2f2
+$gray-black-color    : #444444
+$blue-color          : #385fa3
+
+$text-tooltip-color  : #535353
+$border-tooltip-color: #a6a6a7
+
+
+
+//$FONT-FACE
+
+
+
+//$ELEMENTOS(h1,ul sin clase)
+
+
+//$OBJETOS ($MODULOS) Y ABSTRACCIONES
+
+//Display
+.block
+	display : block
+
+.in_block
+	display : inline-block !important
+
+
+//Backgrounds
+.bg-blue
+	background-color : $blue-color
+.bg-white
+	background-color : white
+.bg-yellow
+	background-color : #edb82b
+.bg-skyblue
+	background-color : #406fd6
+.bg-purple
+	background-color : #a90961
+.bg-green
+	background-color : #87a832
+
+//with images
+.bg-circle-yellow
+	background     : url('../../../../images/circle-yellow.png') no-repeat
+	background-size: 100% 100%
+.bg-circle-skyblue
+	background     : url('../../../../images/circle-skyblue.png') no-repeat
+	background-size: 100% 100%
+.bg-circle-purple
+	background     : url('../../../../images/circle-purple.png') no-repeat
+	background-size: 100% 100%
+.bg-circle-green
+	background     : url('../../../../images/circle-green.png') no-repeat
+	background-size: 100% 100%
+
+.bg-semicircle-blue
+	background     : url('../../../../images/semicircle-blue.png') no-repeat
+	background-size: 100% 100%
+
+.bg-steps
+	background     : url('../../../../images/sprite.png') no-repeat
+
+//Height
+.full-height
+	height : 100%
+
+//Arrows Navigation slide
+.fp-controlArrow
+	display : none
+
+//Textos
+.text-bold
+	font-weight : bold
+
+.text-semibold
+	font-weight: 600
+
+.textcenter
+	text-align : center !important
+
+//Main Nav
+.main-nav
+	margin: 90px auto 0
+	width : 85%
+
+//Page-wrapper
+.page-wrapper
+	margin: 0 auto
+	width : 810px
+	height: 100%
+
+//Page-section
+.page-section
+	background     : url('../../../../images/fondo.png') no-repeat
+	background-size: 100% 100%
+	height         : 1000px !important
+	position       : relative 
+	overflow       : hidden 
+
+//Tooltip
+.tooltip
+	margin-top : -10px !important
+
+	.tooltip-arrow
+		border-bottom-color : white !important
+
+	.tooltip-inner
+		background  	: url('../../../../images/bg-tooltip.png') no-repeat
+		background-size : 100% 100%
+		border          : 1px solid $border-tooltip-color
+		color           : $text-tooltip-color
+		font-family     : 'Source Sans Pro', sans-serif
+		font-size       : 13px
+		font-weight     : 400
+		line-height     : 15px
+		padding         : 14px 8px
+		width           : 131px
+
+
+
+//$COMPONENTES
+
+//Header
+.main-header__logo
+	margin: 27.6% auto 8%
+	width : 63.2%
+
+.main-header__title
+	font-size : 1.375em
+	color     : $gray-color
+
+.main-header__title
+	&::before,&::after
+		content         : ''
+		background-color: $gray-second-color
+		width           : 30%
+		height          : 15px
+		display         : inline-block
+	&::before
+		margin-right: 10px
+	&::after
+		margin-left: 10px
+
+//Main Nav
+.main-nav__producto
+	color          : transparent
+	display        : block
+	font-size      : 1.125em
+	height         : 151px 
+	line-height    : 23px
+	margin         : 0 auto
+	padding        : 25% 5% 0 
+	position       : relative
+	text-decoration: none !important
+	width          : 151px
+	+transition(all 400ms ease)
+
+.main-nav__producto__img
+	position: absolute
+	top     : 30%
+	left    : 0
+	right   : 0
+	margin  : 0 auto
+	+opacity(1)
+	+transition(all 400ms ease)
+
+.main-nav__producto:focus
+	color : transparent
+
+.main-nav__producto:hover
+	color: white !important
+
+	img
+		+opacity(0)
+
+//Modal
+.modal-dialog-style
+	width  : 580px
+	margin : 10% auto 0 !important
+
+
+//Page section
+.page-section__buttons
+	margin     : 5.5% auto 4.8%
+	width      : 401px
+	padding    : 4px
+
+.page-section__form
+	background-color: $blue-color
+	height          : 15px
+	position        : relative
+	z-index         : 99
+
+.page-section__form__arrow
+	display : block
+	height  : 45px
+	margin  : 0px auto
+	position: relative
+	top     : 15px
+	width   : 95px
+
+.page-section__title
+	color    : $blue-color
+	font-size: 1.375em
+	margin   : 9.4% auto 5.5%
+
+.page-section__title__icon
+	height  : 78px
+	margin  : 0 auto
+	position: relative
+	width   : 78px
+
+	img
+		height : 40px
+	
+.page-section__description
+	align-items: center
+	display    : flex
+	padding    : 0 5%
+	margin     : 0 auto 4.4%
+
+.page-section__steps
+	width : 95%
+	margin: 6% auto 0
+ 
+.page-section__steps__item
+	height  : 170px
+	margin  : 0 auto
+	overflow: hidden
+	position: relative
+	width   : 170px
+
+.page-section__nav__items
+	margin : 0 25px 0 0
+
+	li
+		vertical-align : top
+
+.page-section__nav__item
+	color      : transparent
+	display    : block
+	font-size  : 0.56em
+	height     : 58px
+	line-height: 11px
+	padding    : 30% 0 0 0
+	position   : relative
+	width      : 58px
+	+transition(all 400ms ease)
+
+	img
+		height  : 27px
+
+	&:hover,&:focus
+		color: white
+		text-decoration: none
+
+		img
+			+opacity(0)
+
+/*ul*/ 
+.page-section__color-lines
+	bottom  : 0
+	margin  : 0 auto
+	position: absolute
+	width   : 100%
+
+	li
+		height          : 7px
+
+		&.active
+			height : 14px
+			margin : -7px 0 0 0
+
+
+
+//$TEXTURAS
+
+//Main Nav
+.main-nav__producto--textmedium
+	font-size : 1.222em
+
+//Modal
+.modal-content--borderblue
+	border : 4px solid $blue-color
+
+//Page section
+.page-section__buttons--share
+	background-color: transparent
+	border          : none
+	color           : white
+	font-size       : 1.250em
+	margin          : 0 -3px 0 0
+	width           : 196px
+
+	&:hover,&:focus
+		color           : white
+		background-color: transparent
+
+.page-section__buttons--request
+	color    : $blue-color
+	padding  : 7px 32px
+	font-size: 1.250em
+	width    : 196px
+	+border-radius(0)
+
+	&:hover,&:focus
+		background: white
+		color     : $blue-color
+
+.page-section__title--grayblack
+	color : $gray-black-color !important
+
+.page-section__title__icon--margin
+	margin : 0 auto 10px 
+
+.page-section__text--blue
+	color      : $blue-color
+	font-size  : 1em
+	line-height: 20px
+
+	//Sprites
+
+	//slide joyas
+.page-section__steps__item--joyas1
+	background-position: 0 0
+.page-section__steps__item--joyas2
+	background-position: -170px 0
+.page-section__steps__item--joyas3
+	background-position: -340px 0
+.page-section__steps__item--joyas4
+	background-position: -510px 0
+
+	//slide articulos
+.page-section__steps__item--articulos1
+	background-position: 0 -170px
+.page-section__steps__item--articulos2
+	background-position: -170px -170px
+.page-section__steps__item--articulos3
+	background-position: -340px -170px
+.page-section__steps__item--articulos4
+	background-position: -510px -170px
+
+	//slide vehicular
+.page-section__steps__item--vehicular1
+	background-position: 0 -340px
+.page-section__steps__item--vehicular2
+	background-position: -170px -340px
+.page-section__steps__item--vehicular3
+	background-position: -340px -340px
+.page-section__steps__item--vehicular4
+	background-position: -510px -340px
+
+	//slide finanzas
+.page-section__steps__item--finanzas1
+	background-position: 0 -510px
+.page-section__steps__item--finanzas2
+	background-position: -170px -510px
+.page-section__steps__item--finanzas3
+	background-position: -340px -510px
+.page-section__steps__item--finanzas4
+	background-position: -510px -510px
+
+
+/************* $QUERIES **************/
+
+@media screen and (max-width : 800px)
+	
+	.page-wrapper
+		width : 100%
+
+	.main-header__title
+		&:after,&:before
+			width: 28%
+
+	.main-nav__producto
+		height       : 200px
+		margin-bottom: 30px
+		width        : 200px
+		padding      : 22% 5% 0
+
+	.main-nav__producto__img
+		top : 35%
+
+	//Page section
+	.page-section__description
+		padding : 0
+
+	.page-section__nav__item
+		font-size: 0.8125em
+		height   : 80px
+		width    : 80px
+
+	//Modal
+	.modal-dialog-style
+		margin : 25% auto 0 !important
