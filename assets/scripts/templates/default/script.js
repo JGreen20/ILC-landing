@@ -3,193 +3,190 @@ var j = jQuery.noConflict();
 (function ($){
 	j(document).on('ready',function(){
 
-	//Call to widthBrowser Function
-	widthBrowser();
+		//Call to widthBrowser Function
+		widthBrowser();
 
-	//Full Page script
-	j('#landing-page').fullpage({
-		//Navigation
-		menu                             : false,
-		anchors                          : ['landingPage', 'sectionProducts'],
-		navigation                       : false,
-		navigationTooltips               : ['firstSlide', 'secondSlide'],
-		slidesNavigation                 : false,
+		//Full Page script
+		j('#landing-page').fullpage({
+			//Navigation
+			menu                             : false,
+			anchors                          : ['landingPage', 'sectionProducts'],
+			navigation                       : false,
+			navigationTooltips               : ['firstSlide', 'secondSlide'],
+			slidesNavigation                 : false,
 
-		//Scrolling
-		autoScrolling                    : false,
-		fitToSection                     : false,
-		normalScrollElementTouchThreshold: 5,
-		scrollingSpeed                   : 900,
-		scrollOverflow                   : false,
+			//Scrolling
+			autoScrolling                    : false,
+			fitToSection                     : false,
+			normalScrollElementTouchThreshold: 5,
+			scrollingSpeed                   : 900,
+			scrollOverflow                   : false,
 
-		//Accessibility
-        keyboardScrolling                : false,
-        animateAnchor                    : false,
-        recordHistory                    : false,
+			//Accessibility
+	    keyboardScrolling                : false,
+	    animateAnchor                    : false,
+	    recordHistory                    : false,
 
-		//Custom selectors
-		sectionSelector                  : '.page-section',
-		slideSelector                    : '.slide',
+			//Custom selectors
+			sectionSelector                  : '.page-section',
+			slideSelector                    : '.slide',
 
-		//Design
-		fixedElements                    : '#formularyModal,.modal,#result',
-        responsive                       : 2000,
-	});
-
-	//Click Navigation to Slide
-	j('a.main-nav__producto').on('click',function(){
-
-		var widthPage = j('.page-wrapper').width();
-		var slideto = j(this).data('index');
-		var movepx = -widthPage*(slideto-1);
-		//alert(movepx);
-
-		j('.fp-slidesContainer').css({
-			'-webkit-transform' : 'translate3d('+movepx+'px, 0px, 0px)',
-			'-moz-transform'    : 'translate3d('+movepx+'px, 0px, 0px)',
-			'-o-transform'      : 'translate3d('+movepx+'px, 0px, 0px)',
-			'transform'         : 'translate3d('+movepx+'px, 0px, 0px)'
+			//Design
+			fixedElements                    : '#formularyModal,.modal,#result',
+	    responsive                       : 2000,
 		});
 
-		j('.slide').siblings().removeClass('active');
-		j('[data-anchor=slide'+slideto+']').addClass('active');
+		//Click Navigation to Slide
+		j('a.main-nav__producto').on('click',function(){
 
-		setTimeout(function(){
-			$.fn.fullpage.moveSectionDown();
-		},700);
-	});
+			var widthPage = j('.page-wrapper').width();
+			var slideto = j(this).data('index');
+			var movepx = -widthPage*(slideto-1);
+			//alert(movepx);
 
-	//Controls for Page and Navigation
-	j('.js-slide-one').on('click',function(){
-		$.fn.fullpage.moveTo(2, 'slide1');
-	});
+			j('.fp-slidesContainer').css({
+				'-webkit-transform' : 'translate3d('+movepx+'px, 0px, 0px)',
+				'-moz-transform'    : 'translate3d('+movepx+'px, 0px, 0px)',
+				'-o-transform'      : 'translate3d('+movepx+'px, 0px, 0px)',
+				'transform'         : 'translate3d('+movepx+'px, 0px, 0px)'
+			});
 
-	j('.js-slide-two').on('click',function(){
-		$.fn.fullpage.moveTo(2, 'slide2');
-	});
+			j('.slide').siblings().removeClass('active');
+			j('[data-anchor=slide'+slideto+']').addClass('active');
 
-	j('.js-slide-three').on('click',function(){
-		$.fn.fullpage.moveTo(2, 'slide3');
-	});
+			setTimeout(function(){
+				$.fn.fullpage.moveSectionDown();
+			},700);
+		});
 
-	j('.js-slide-four').on('click',function(){
-		$.fn.fullpage.moveTo(2, 'slide4');
-	});
+		//Controls for Page and Navigation
+		j('.js-slide-one').on('click',function(){
+			$.fn.fullpage.moveTo(2, 'slide1');
+		});
 
-	// Class active in page-section__color-lines (for lines colors)
-	j('a.main-nav__producto,a.page-section__nav__item').on('click',function(){
-		var line = "#js-page-section__color-lines li.bg-"+j(this).data('line');
-		//alert(line);
+		j('.js-slide-two').on('click',function(){
+			$.fn.fullpage.moveTo(2, 'slide2');
+		});
 
-		j('#js-page-section__color-lines li').switchClass( "active", "", 900, "easeInOutQuad" );
-		j(line).switchClass( "", "active", 900, "easeInOutQuad" );
-	});
+		j('.js-slide-three').on('click',function(){
+			$.fn.fullpage.moveTo(2, 'slide3');
+		});
 
-	//Hold click
-	j('a.page-section__nav__item,a.page-section__steps__item').on('click',function(event){
-		event.preventDefault();
-	});
+		j('.js-slide-four').on('click',function(){
+			$.fn.fullpage.moveTo(2, 'slide4');
+		});
 
-	//ToolTip
-	j('[data-toggle="tooltip"]').tooltip({
-		trigger : 'hover focus',
-		delay   : { "show": 50, "hide": 50 }
-	});
+		// Class active in page-section__color-lines (for lines colors)
+		j('a.main-nav__producto,a.page-section__nav__item').on('click',function(){
+			var line = "#js-page-section__color-lines li.bg-"+j(this).data('line');
+			//alert(line);
 
+			j('#js-page-section__color-lines li').switchClass( "active", "", 900, "easeInOutQuad" );
+			j(line).switchClass( "", "active", 900, "easeInOutQuad" );
+		});
 
-	/*******************************************************************/
-	/* SHARE FACEBOOK BUTTON  ******************************************/
-	/*******************************************************************/
-	j('#share-fb').on('click',function(event){
-		event.preventDefault();
-		facebookShare();
-	});
+		//Hold click
+		j('a.page-section__nav__item,a.page-section__steps__item').on('click',function(event){
+			event.preventDefault();
+		});
 
+		//ToolTip
+		j('[data-toggle="tooltip"]').tooltip({
+			trigger : 'hover focus',
+			delay   : { "show": 50, "hide": 50 }
+		});
 
-	/*******************************************************************/
-	/* FORM VALIDATION *************************************************/
-	/*******************************************************************/
+		/*******************************************************************/
+		/* SHARE FACEBOOK BUTTON  ******************************************/
+		/*******************************************************************/
+		j('#share-fb').on('click',function(event){
+			event.preventDefault();
+			facebookShare();
+		});
 
-	j('#js-frm-register')
-		.formValidation({
-		    // To use feedback icons, ensure that you use Bootstrap v3.1.0 or later
-		    feedbackIcons: {
-		    	valid: 'glyphicon glyphicon-ok',
-		    	invalid: 'glyphicon glyphicon-remove',
-		    	validating: 'glyphicon glyphicon-refresh'
-		    },
-		    live: 'enabled',
-		    fields: {
-		    	customer_name: {
-		    		validators: {
-		    			notEmpty: {
-		    				message: 'Campo requerido'
-		    			},
-		    			regexp: {
-		    				regexp: /^[a-z\sñÑ]+$/i,
-		    				message: 'El nombre sólo puede contener caracteres alfabéticos y espacios'
-		    			},
-		    		}
-		    	},
-		    	customer_lastname: {
-		    		validators: {
-		    			notEmpty: {
-		    				message: 'Campo requerido'
-		    			},
-		    			regexp: {
-		    				regexp: /^[a-z\sñÑ]+$/i,
-		    				message: 'El nombre sólo puede contener caracteres alfabéticos y espacios'
-		    			},
-		    		}
-		    	},
-		    	customer_dni: {
-		    		validators: {
-		    			notEmpty: {
-		    				message: 'Campo requerido'
-		    			},
-		    			stringLength: {
-		    				min: 8,
-		    				max: 8,
-		    				message: 'DNI contiene 8 digitos'
-		    			},
-		    			regexp: {
-		    				regexp: /^[0-9]+$/,
-		    				message: 'Solo caracteres numéricos'
-		    			},
-		    			remote : {
-		    				url     : _root_ + 'main/verify',
-		    				message : "DNI ya registrado",
-		    				type    : 'POST',
-		    				delay   : 1000,
-		    				validKey: "result"
-		    			}
-		    		}
-		    	},
-		    	customer_email: {
-		    		validators: {
-		    			notEmpty: {
-		    				message: 'Campo requerido'
-		    			}
-		    		}
-		    	},
-		    	customer_phone: {
-		    		validators: {
-		    			regexp: {
-		    				regexp: /^[0-9]+$/,
-		    				message: 'Solo caracteres numéricos'
-		    			},
-		    			stringLength: {
-		    				min: 7,
-		    				max: 10,
-		    				message: 'Debe contener como mínimo 7 caracteres y máximo 10'
-		    			},
-		    		}
-		    	},
-		    },
+		/*******************************************************************/
+		/* FORM VALIDATION *************************************************/
+		/*******************************************************************/
+		j('#js-frm-register').formValidation({
+	    // To use feedback icons, ensure that you use Bootstrap v3.1.0 or later
+	    feedbackIcons: {
+	    	valid: 'glyphicon glyphicon-ok',
+	    	invalid: 'glyphicon glyphicon-remove',
+	    	validating: 'glyphicon glyphicon-refresh'
+	    },
+	    live: 'enabled',
+	    fields: {
+	    	customer_name: {
+	    		validators: {
+	    			notEmpty: {
+	    				message: 'Campo requerido'
+	    			},
+	    			regexp: {
+	    				regexp: /^[a-z\sñÑ]+$/i,
+	    				message: 'El nombre sólo puede contener caracteres alfabéticos y espacios'
+	    			},
+	    		}
+	    	},
+	    	customer_lastname: {
+	    		validators: {
+	    			notEmpty: {
+	    				message: 'Campo requerido'
+	    			},
+	    			regexp: {
+	    				regexp: /^[a-z\sñÑ]+$/i,
+	    				message: 'El nombre sólo puede contener caracteres alfabéticos y espacios'
+	    			},
+	    		}
+	    	},
+	    	customer_dni: {
+	    		validators: {
+	    			notEmpty: {
+	    				message: 'Campo requerido'
+	    			},
+	    			stringLength: {
+	    				min: 8,
+	    				max: 8,
+	    				message: 'DNI contiene 8 digitos'
+	    			},
+	    			regexp: {
+	    				regexp: /^[0-9]+$/,
+	    				message: 'Solo caracteres numéricos'
+	    			},
+	    			remote : {
+	    				url     : _root_ + 'main/verify',
+	    				message : "DNI ya registrado",
+	    				type    : 'POST',
+	    				delay   : 1000,
+	    				validKey: "result"
+	    			}
+	    		}
+	    	},
+	    	customer_email: {
+	    		validators: {
+	    			notEmpty: {
+	    				message: 'Campo requerido'
+	    			}
+	    		}
+	    	},
+	    	customer_phone: {
+	    		validators: {
+	    			regexp: {
+	    				regexp: /^[0-9]+$/,
+	    				message: 'Solo caracteres numéricos'
+	    			},
+	    			stringLength: {
+	    				min: 7,
+	    				max: 10,
+	    				message: 'Debe contener como mínimo 7 caracteres y máximo 10'
+	    			},
+	    		}
+	    	},
+	    },
 		})
 		.on('success.form.fv', function(e) {
       // Prevent form submission
       e.preventDefault();
+			spinner.spin(target);
 
       // Get the form instance
       var $form = j(e.target);
@@ -216,8 +213,8 @@ var j = jQuery.noConflict();
 				credito       : credito,
 				dpto          : dpto
 			}, function(data) {
+				spinner.stop();
 				if (data.result) {
-
 					//Ocultar el modal
 					j('#formularyModal').modal('hide');
 
@@ -236,30 +233,45 @@ var j = jQuery.noConflict();
 			},"json");
         });
 
-	
-	/*******************************************************************/
-	/* Resetear los campos en el modal**********************************/
-	/*******************************************************************/
-	j('#formularyModal').on('hide.bs.modal', function() {
-		$(this).find('form')[0].reset();
-		j('#js-frm-register').formValidation('resetForm', true);
+		/*******************************************************************/
+		/* Resetear los campos en el modal**********************************/
+		/*******************************************************************/
+		j('#formularyModal').on('hide.bs.modal', function() {
+			$(this).find('form')[0].reset();
+			j('#js-frm-register').formValidation('resetForm', true);
+		});
+
+		j('#formularyModal').on('shown.bs.modal', function() {
+			j('#js-frm-register').formValidation('resetForm', true);
+		});
+
+		//On resiize Window
+		j(window).on('resize',function(){
+			widthBrowser();
+		});
+
+		opts = {
+      lines: 13, // The number of lines to draw
+      length: 20, // The length of each line
+      width: 10, // The line thickness
+      radius: 30, // The radius of the inner circle
+      corners: 1, // Corner roundness (0..1)
+      rotate: 0, // The rotation offset
+      direction: 1, // 1: clockwise, -1: counterclockwise
+      color: '#000', // #rgb or #rrggbb or array of colors
+      speed: 1, // Rounds per second
+      trail: 60, // Afterglow percentage
+      shadow: false, // Whether to render a shadow
+      hwaccel: false, // Whether to use hardware acceleration
+      className: 'spinner', // The CSS class to assign to the spinner
+      zIndex: 2e9, // The z-index (defaults to 2000000000)
+      top: '50%', // Top position relative to parent
+      left: '50%' // Left position relative to parent
+    };
+
+    target = document.getElementById('spin');
+    spinner = new Spinner(opts);
 	});
-
-	j('#formularyModal').on('shown.bs.modal', function() {
-		j('#js-frm-register').formValidation('resetForm', true);
-	});
-
-
-	//On resiize Window
-	j(window).on('resize',function(){
-		widthBrowser();
-	});
-
-
-/************************************************************************/
-
-
-    });
 
 	//FACEBOOK LOGIN
 	function facebookShare(){

@@ -496,19 +496,28 @@ html, body {
   background-position: -510px -510px;
 }
 
+/******************* IDS *************** */
+/* line 379, ../sass/style.sass */
+#spin {
+  left: 50%;
+  position: fixed;
+  top: 50%;
+  z-index: 9999;
+}
+
 /************* $QUERIES ************* */
 @media screen and (max-width: 800px) {
-  /* line 382, ../sass/style.sass */
+  /* line 389, ../sass/style.sass */
   .page-wrapper {
     width: 100%;
   }
 
-  /* line 386, ../sass/style.sass */
+  /* line 393, ../sass/style.sass */
   .main-header__title:after, .main-header__title:before {
     width: 28%;
   }
 
-  /* line 389, ../sass/style.sass */
+  /* line 396, ../sass/style.sass */
   .main-nav__producto {
     height: 200px;
     margin-bottom: 30px;
@@ -516,24 +525,24 @@ html, body {
     padding: 22% 5% 0;
   }
 
-  /* line 395, ../sass/style.sass */
+  /* line 402, ../sass/style.sass */
   .main-nav__producto__img {
     top: 35%;
   }
 
-  /* line 399, ../sass/style.sass */
+  /* line 406, ../sass/style.sass */
   .page-section__description {
     padding: 0;
   }
 
-  /* line 402, ../sass/style.sass */
+  /* line 409, ../sass/style.sass */
   .page-section__nav__item {
     font-size: 0.8125em;
     height: 80px;
     width: 80px;
   }
 
-  /* line 408, ../sass/style.sass */
+  /* line 415, ../sass/style.sass */
   .modal-dialog-style {
     margin: 25% auto 0 !important;
   }
