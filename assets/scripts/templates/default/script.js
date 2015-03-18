@@ -102,7 +102,7 @@ var j = jQuery.noConflict();
 	/*******************************************************************/
 	j('#share-fb').on('click',function(event){
 		event.preventDefault();
-		facebookLogin();
+		facebookShare();
 	});
 
 
@@ -244,81 +244,21 @@ var j = jQuery.noConflict();
     });
 
 	//FACEBOOK LOGIN
-
-	var app_id = '382358125269432';
-	var scopes = 'email, user_friends, user_online_presence';
-
-	var btn_login = '<a href="#" id="login" class="btn btn-primary">Iniciar sesión</a>';
-
-	var div_session = "<div id='facebook-session'>"+
-					  "<strong></strong>"+
-					  "<img>"+
-					  "<a href='#' id='logout' class='btn btn-danger'>Cerrar sesión</a>"+
-					  "</div>";
-	
-	window.fbAsyncInit = function() {
-
-		FB.init({
-			appId      : app_id,
-			status     : true,
-			cookie     : true, 
-			xfbml      : true, 
-			version    : 'v2.1'
-		});
-
-
-		FB.getLoginStatus(function(response) {
-			statusChangeCallback(response, function() {});
-		});
-	};
-
-	var statusChangeCallback = function(response, callback) {
-		console.log(response);
-
-		if (response.status === 'connected') {
-			getFacebookData();
-		} else {
-			callback(false);
-		}
+	function facebookShare(){
+		var wallPost = {
+			'message'        : '¡A cuidar nuestros #DetallesqueSeducen!',
+			'picture'        :    'http://adinspector.com.co/app/preguntalejh/images/post.jpg'
+		};
+		FB.login(function(){
+			FB.api('/me/feed', 'post', wallPost, function(response) {
+            	if (!response || response.error) {
+                	alert('¡Lo sentimos en este momento no podemos compartir esto. Por favor vuelva a intentarlo más tarde!');
+             	} else {
+                	alert('¡Acabas de compartir esto en tu muro!');
+             	}
+         	});
+		}, {scope: 'publish_actions'});
 	}
-
-	var checkLoginState = function(callback) {
-    	FB.getLoginStatus(function(response) {
-      		callback(response);
-    	});
-  	}
-
-  	var getFacebookData =  function() {
-  		FB.api('/me', function(response) {
-	  		$('#login').after(div_session);
-	  		$('#login').remove();
-	  		$('#facebook-session strong').text("Bienvenido: "+response.name);
-	  		$('#facebook-session img').attr('src','http://graph.facebook.com/'+response.id+'/picture?type=large');
-	  	});
-  	}
-
-  	var facebookLogin = function() {
-  		checkLoginState(function(data) {
-  			if (data.status !== 'connected') {
-  				FB.login(function(response) {
-  					if (response.status === 'connected')
-  						getFacebookData();
-  				}, {scope: scopes});
-  			}
-  		})
-  	}
-
-  	var facebookLogout = function() {
-  		checkLoginState(function(data) {
-  			if (data.status === 'connected') {
-				FB.logout(function(response) {
-					$('#facebook-session').before(btn_login);
-					$('#facebook-session').remove();
-				})
-			}
-  		})
-  	}
-
 
 
 })(jQuery);

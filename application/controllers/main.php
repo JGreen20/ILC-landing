@@ -3,8 +3,6 @@
 class Main extends MY_Controller
 {
 
-	protected $my_table = "customers";
-
 	/**
 	* Portada principal For - Get
 	*
