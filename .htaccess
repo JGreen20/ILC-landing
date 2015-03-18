@@ -558,8 +558,8 @@ AddCharset utf-8 .css .js .xml .json .rss .atom
     RewriteEngine on
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteCond %{REQUEST_FILENAME} !-d
-    RewriteRule ^(.*)$ proyectos/app/ilcapp/index.php/$1 [L]
+    RewriteRule ^(.*)$ /proyectos/app/ilcapp/index.php/$1 [L]
 </IfModule>
 <IfModule !mod_rewrite.c>
-    ErrorDocument 404 proyectos/app/ilcapp/index.php
+    ErrorDocument 404 /proyectos/app/ilcapp/index.php
 </IfModule>

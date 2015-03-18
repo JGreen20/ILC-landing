@@ -183,11 +183,11 @@ var j = jQuery.noConflict();
 		    },
 		})
 		.on('success.form.fv', function(e) {
-            // Prevent form submission
-            e.preventDefault();
+      // Prevent form submission
+      e.preventDefault();
 
-            // Get the form instance
-            var $form = j(e.target);
+      // Get the form instance
+      var $form = j(e.target);
 
 			var $this = j(this);
 			var dataArray = $form.serializeArray();
@@ -211,7 +211,6 @@ var j = jQuery.noConflict();
 				credito       : credito,
 				dpto          : dpto
 			}, function(data) {
-
 				if (data.result) {
 					alert('Se agregó correctamente el cliente.', 'Aviso');
 

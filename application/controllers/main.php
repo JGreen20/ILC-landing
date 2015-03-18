@@ -541,7 +541,7 @@ class Main extends MY_Controller
 					// Enviar al administrador
 					$message = '<h2>Has sido contactado por: </h2>'
 										.'<ul>'
-										.'<li>Nombre: ' . $name . ' ' . $lastaname . '</li>'
+										.'<li>Nombre: ' . $name . ' ' . $lastname . '</li>'
 										.'<li>Correo: ' . $email . '</li>'
 										.'</ul>';
 
