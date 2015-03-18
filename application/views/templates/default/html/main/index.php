@@ -77,7 +77,7 @@
 					</p> <!-- / page-section__text--blue-->
 				</div> <!-- /col-xs-6 -->
 				<div class="col-xs-6  text-center">
-					<iframe width="327" height="175" src="http://www.youtube.com/v/XGSy3_Czz8k"></iframe>
+					<iframe width="327" height="175" src="https://www.youtube.com/v/XGSy3_Czz8k"></iframe>
 				</div> <!-- / col-xs-6-->
 			</div> <!-- end row -->
 
@@ -104,7 +104,7 @@
 				</ul> <!-- /page-section__steps -->
 
 				<div class="page-section__buttons  bg-blue  text-center">
-					<a id ="share-fb" class="btn  page-section__buttons--share  text-uppercase  text-semibold" href="#" role="button">
+					<a class="js-share-fb  btn  page-section__buttons--share  text-uppercase  text-semibold" href="#" role="button">
 						<img src="<?php echo base_url(); ?>assets/images/compartir.png" alt="" class="img-responsive  in_block" />
 						compartir
 					</a>
@@ -150,7 +150,7 @@
 					</p> <!-- / page-section__text--blue-->
 				</div> <!-- /col-xs-6 -->
 				<div class="col-xs-6  text-center">
-					<iframe width="327" height="175" src="http://www.youtube.com/v/XGSy3_Czz8k"></iframe>
+					<iframe width="327" height="175" src="https://www.youtube.com/v/XGSy3_Czz8k"></iframe>
 				</div> <!-- / col-xs-6-->
 			</div> <!-- end row -->
 
@@ -177,7 +177,7 @@
 				</ul> <!-- /row -->
 
 				<div class="page-section__buttons  bg-blue  text-center">
-					<a class="btn  page-section__buttons--share  text-uppercase  text-semibold" href="#" role="button">
+					<a class="js-share-fb  btn  page-section__buttons--share  text-uppercase  text-semibold" href="#" role="button">
 						<img src="<?php echo base_url(); ?>assets/images/compartir.png" alt="" class="img-responsive  in_block" />
 						compartir
 					</a>
@@ -223,7 +223,7 @@
 					</p> <!-- / page-section__text--blue-->
 				</div> <!-- /col-xs-6 -->
 				<div class="col-xs-6  text-center">
-					<iframe width="327" height="175" src="http://www.youtube.com/v/XGSy3_Czz8k"></iframe>
+					<iframe width="327" height="175" src="https://www.youtube.com/v/XGSy3_Czz8k"></iframe>
 				</div> <!-- / col-xs-6-->
 			</div> <!-- end row -->
 
@@ -250,7 +250,7 @@
 				</ul> <!-- /page-section__steps-->
 
 				<div class="page-section__buttons  bg-blue  text-center">
-					<a class="btn  page-section__buttons--share  text-uppercase  text-semibold" href="#" role="button">
+					<a class="js-share-fb  btn  page-section__buttons--share  text-uppercase  text-semibold" href="#" role="button">
 						<img src="<?php echo base_url(); ?>assets/images/compartir.png" alt="" class="img-responsive  in_block" />
 						compartir
 					</a>
@@ -296,7 +296,7 @@
 					</p> <!-- / page-section__text--blue-->
 				</div> <!-- /col-xs-6 -->
 				<div class="col-xs-6  text-center">
-					<iframe width="327" height="175" src="http://www.youtube.com/v/XGSy3_Czz8k"></iframe>
+					<iframe width="327" height="175" src="https://www.youtube.com/v/XGSy3_Czz8k"></iframe>
 				</div> <!-- / col-xs-6-->
 			</div> <!-- end row -->
 
@@ -323,7 +323,7 @@
 				</ul> <!-- /page-section__steps-->
 
 				<div class="page-section__buttons  bg-blue  text-center">
-					<a class="btn  page-section__buttons--share  text-uppercase  text-semibold" href="#" role="button">
+					<a class="js-share-fb  btn  page-section__buttons--share  text-uppercase  text-semibold" href="#" role="button">
 						<img src="<?php echo base_url(); ?>assets/images/compartir.png" alt="" class="img-responsive  in_block" />
 						compartir
 					</a>

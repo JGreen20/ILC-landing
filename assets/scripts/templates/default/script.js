@@ -23,9 +23,9 @@ var j = jQuery.noConflict();
 			scrollOverflow                   : false,
 
 			//Accessibility
-	    keyboardScrolling                : false,
-	    animateAnchor                    : false,
-	    recordHistory                    : false,
+		    keyboardScrolling                : false,
+		    animateAnchor                    : false,
+		    recordHistory                    : false,
 
 			//Custom selectors
 			sectionSelector                  : '.page-section',
@@ -99,7 +99,7 @@ var j = jQuery.noConflict();
 		/*******************************************************************/
 		/* SHARE FACEBOOK BUTTON  ******************************************/
 		/*******************************************************************/
-		j('#share-fb').on('click',function(event){
+		j('.js-share-fb').on('click',function(event){
 			event.preventDefault();
 			facebookShare();
 		});
@@ -122,7 +122,7 @@ var j = jQuery.noConflict();
 	    				message: 'Campo requerido'
 	    			},
 	    			regexp: {
-	    				regexp: /^[a-z\sñÑ]+$/i,
+	    				regexp: /^[a-z\sñÑáéíóúÁÉÍÓÚ]+$/i,
 	    				message: 'El nombre sólo puede contener caracteres alfabéticos y espacios'
 	    			},
 	    		}
@@ -133,7 +133,7 @@ var j = jQuery.noConflict();
 	    				message: 'Campo requerido'
 	    			},
 	    			regexp: {
-	    				regexp: /^[a-z\sñÑ]+$/i,
+	    				regexp: /^[a-z\sñÑáéíóúÁÉÍÓÚ]+$/i,
 	    				message: 'El nombre sólo puede contener caracteres alfabéticos y espacios'
 	    			},
 	    		}
@@ -165,7 +165,10 @@ var j = jQuery.noConflict();
 	    		validators: {
 	    			notEmpty: {
 	    				message: 'Campo requerido'
-	    			}
+	    			},
+	    			emailAddress: {
+                        message: 'Por favor ingrese una direccion email válida'
+                    },
 	    		}
 	    	},
 	    	customer_phone: {

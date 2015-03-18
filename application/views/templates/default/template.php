@@ -54,7 +54,7 @@
         <script>window.jQuery || document.write('<script src="<?php echo base_url(); ?>assets/scripts/libraries/jquery/jquery-1.11.0.min.js"><\/script>')</script>
 		<script>window.jQueryUI || document.write('<script src="<?php echo base_url(); ?>assets/scripts/libraries/jquery/jquery-ui.min.js"><\/script>')</script>
 		<script> var _root_ = '<?php echo base_url(); ?>'</script>
-        <script type="text/javascript" src="http://fgnass.github.io/spin.js/spin.min.js"></script>
+        <script type="text/javascript" src="https://fgnass.github.io/spin.js/spin.min.js"></script>
         <?php echo $_js; ?>
     </body>
 </html>
