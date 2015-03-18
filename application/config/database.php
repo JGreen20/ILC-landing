@@ -49,10 +49,12 @@ $active_group = 'default';
 $active_record = TRUE;
 
 $db['default']['hostname'] = 'localhost';
-$db['default']['username'] = 'adinspec_jgomez';
-$db['default']['password'] = 'Fs!we6b&Gt4P';
-//$db['default']['database'] = 'ilc_landing';
-$db['default']['database'] = 'adinspec_ilc';
+//$db['default']['username'] = 'adinspec_jgomez';
+//$db['default']['password'] = 'Fs!we6b&Gt4P';
+$db['default']['username'] = 'root';
+$db['default']['password'] = '';
+$db['default']['database'] = 'ilc_landing';
+//$db['default']['database'] = 'adinspec_ilc';
 $db['default']['dbdriver'] = 'mysql';
 $db['default']['dbprefix'] = '';
 $db['default']['pconnect'] = TRUE;

@@ -498,6 +498,7 @@ class Main extends MY_Controller
 
 		echo json_encode($return);
 		exit;
+
 	}
 
 	/**
