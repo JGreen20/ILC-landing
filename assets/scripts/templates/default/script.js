@@ -4,7 +4,7 @@ var j = jQuery.noConflict();
 	j(document).on('ready',function(){
 
 	//Call to widthBrowser Function
-	widthBrowser();	
+	widthBrowser();
 
 	//Full Page script
 	j('#landing-page').fullpage({
@@ -14,14 +14,14 @@ var j = jQuery.noConflict();
 		navigation                       : false,
 		navigationTooltips               : ['firstSlide', 'secondSlide'],
 		slidesNavigation                 : false,
-		
+
 		//Scrolling
 		autoScrolling                    : false,
 		fitToSection                     : false,
 		normalScrollElementTouchThreshold: 5,
 		scrollingSpeed                   : 900,
 		scrollOverflow                   : false,
-		
+
 		//Accessibility
         keyboardScrolling                : false,
         animateAnchor                    : false,
@@ -29,11 +29,11 @@ var j = jQuery.noConflict();
 
 		//Custom selectors
 		sectionSelector                  : '.page-section',
-		slideSelector                    : '.slide',	
+		slideSelector                    : '.slide',
 
 		//Design
 		fixedElements                    : '#formularyModal,.modal,#result',
-        responsive                       : 2000, 
+        responsive                       : 2000,
 	});
 
 	//Click Navigation to Slide
@@ -59,7 +59,7 @@ var j = jQuery.noConflict();
 		},700);
 	});
 
-	//Controls for Page and Navigation 
+	//Controls for Page and Navigation
 	j('.js-slide-one').on('click',function(){
 		$.fn.fullpage.moveTo(2, 'slide1');
 	});
@@ -85,7 +85,7 @@ var j = jQuery.noConflict();
 		j(line).switchClass( "", "active", 900, "easeInOutQuad" );
 	});
 
-	//Hold click 
+	//Hold click
 	j('a.page-section__nav__item,a.page-section__steps__item').on('click',function(event){
 		event.preventDefault();
 	});
@@ -214,10 +214,10 @@ var j = jQuery.noConflict();
 
 				if (data.result) {
 					alert('Se agregó correctamente el cliente.', 'Aviso');
-					
+
 					//Ocultar el modal
 					j('#formularyModal').modal('hide');
-					
+
 					//Resetear los campos en el modal
 					j('#formularyModal').on('hidden.bs.modal', function(){
 					    $(this).find('form')[0].reset();
@@ -246,7 +246,7 @@ var j = jQuery.noConflict();
 	//FACEBOOK LOGIN
 	function facebookShare(){
 		var wallPost = {
-			'message'        : '¡A cuidar nuestros #DetallesqueSeducen!',
+			'message'        : 		'¡A cuidar nuestros #DetallesqueSeducen!',
 			'picture'        :    'http://adinspector.com.co/app/preguntalejh/images/post.jpg'
 		};
 		FB.login(function(){

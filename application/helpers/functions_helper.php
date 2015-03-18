@@ -230,7 +230,7 @@
 	if(!function_exists('send_email')) {
 		function send_email($email, $subject, $message) {
 			$CI =& get_instance();
-			$CI->email->from('noreplay@for-get.pe', 'For - Get');
+			$CI->email->from('noreplay@ilc.com.pe', 'ILC');
 			$CI->email->to($email);
 			$CI->email->subject($subject);
 			$CI->email->message($message);

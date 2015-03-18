@@ -480,7 +480,7 @@ class Main extends MY_Controller
 	/**
 	* Método para verificar si el DNI ya se encuentra registrado
 	*
-	*/ 
+	*/
 	public function verify()
 	{
 		$return = array('result' => false);
@@ -494,7 +494,7 @@ class Main extends MY_Controller
 		if (!$this->Main_model->checkCustomer($field, $dni)) {
 			// Finally, return a JSON
 			$return['result'] = true;
-		}	
+		}
 
 		echo json_encode($return);
 		exit;
@@ -503,13 +503,16 @@ class Main extends MY_Controller
 	/**
 	* Método para insertar nuevo Cliente
 	*
-	*/ 
-
+	*/
 	public function insertCustomer()
 	{
 		$return = array('result' => false);
 
 		if ($this->input->post('token') == $this->session->userdata('token')) {
+			$name = $this->input->post('name');
+			$lastname = $this->input->post('lastname');
+			$email = $this->input->post('email');
+			$emailAdmin = 'j.perez@adinspector.pe';
 
 			// Cargar el modelo
 			$this->load->model('Main_model');
@@ -518,20 +521,40 @@ class Main extends MY_Controller
 			   'name'             => $this->input->post('name'),
 			   'lastname'         => $this->input->post('lastname'),
 			   'dni'              => $this->input->post('dni'),
-			   'email'            => $this->input->post('email'),
+			   'email'            => $email,
 			   'phone'            => $this->input->post('phone'),
 			   'id_credito'       => $this->input->post('credito'),
 			   'id_departamento'  => $this->input->post('dpto')
 			);
 
 			if($this->Main_model->insertaCustomer($data)){
-				$return['result'] = TRUE;
+				// Enviar correo a mismo cliente y al administrador
+				$this->load->library('email');
+				$this->load->helper('functions');
+
+				// Enviar correo de confirmación a cliente
+				$subject = 'Formulario de solicitud';
+				$message = '<h2>Gracias por contactarnos. Nos estaremos poniendo en contacto con usted muy pronto</h2>';
+				if (send_email($email, $subject, $message))
+				{
+					// Enviar al administrador
+					$message = '<h2>Has sido contactado por: </h2>'
+										.'<ul>'
+										.'<li>Nombre: ' . $name . ' ' . $lastaname . '</li>'
+										.'<li>Correo: ' . $email . '</li>'
+										.'</ul>';
+
+					if (send_email($emailAdmin, $subject, $message))
+					{
+						$return['result'] = TRUE;
+					}
+				}
 			}
 		}
 		echo json_encode($return);
-		exit;	
+		exit;
 	}
-	
+
 }
 
 /* End of file portada.php */
