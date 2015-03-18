@@ -1,0 +1,18 @@
+.DS_Store
+
+application/cache/*
+!application/cache/index.html
+!application/cache/.htaccess
+
+application/logs/*
+!application/logs/index.html
+!application/logs/.htaccess
+
+database/*
+recursos/*
+ad-content/*
+
+# SASS
+assets/styles/templates/admin/default/.sass-cache/*
+assets/styles/templates/default/.sass-cache/*
+assets/styles/templates/extranet/default/.sass-cache/*
