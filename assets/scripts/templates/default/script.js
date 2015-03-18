@@ -178,6 +178,11 @@ var j = jQuery.noConflict();
 		    				regexp: /^[0-9]+$/,
 		    				message: 'Solo caracteres numéricos'
 		    			},
+		    			stringLength: {
+		    				min: 7,
+		    				max: 10,
+		    				message: 'Debe contener como mínimo 7 caracteres y máximo 10'
+		    			},
 		    		}
 		    	},
 		    },
@@ -231,6 +236,20 @@ var j = jQuery.noConflict();
 				}
 			},"json");
         });
+
+	
+	/*******************************************************************/
+	/* Resetear los campos en el modal**********************************/
+	/*******************************************************************/
+	j('#formularyModal').on('hide.bs.modal', function() {
+		$(this).find('form')[0].reset();
+		j('#js-frm-register').formValidation('resetForm', true);
+	});
+
+	j('#formularyModal').on('shown.bs.modal', function() {
+		j('#js-frm-register').formValidation('resetForm', true);
+	});
+
 
 	//On resiize Window
 	j(window).on('resize',function(){
