@@ -1,4 +1,4 @@
-Mailing Ad+INSPECTOR
+ILC landing Ad+INSPECTOR
 ====================
 
-Sistema de envío de mailing masivo utilizando la plataforma Mailgun
+Ilc landing 

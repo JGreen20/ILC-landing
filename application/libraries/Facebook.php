@@ -229,29 +229,5 @@ class Facebook
 		return $response;
 	}
 
-	public function publishPost($link,$message)
-	{
-		if($this->session) {
-
-		  try {
-
-		    $response = (new FacebookRequest(
-		      $session, 'POST', '/me/feed', array(
-		        'link'    => $link,
-		        'message' => $message
-		      )
-		    ))->execute()->getGraphObject();
-
-		    echo "Posted with id: " . $response->getProperty('id');
-
-		  } catch(FacebookRequestException $e) {
-
-		    echo "Exception occured, code: " . $e->getCode();
-		    echo " with message: " . $e->getMessage();
-
-		  }   
-
-		}
-	}
 }
 
