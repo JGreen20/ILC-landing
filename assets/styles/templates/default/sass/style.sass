@@ -216,7 +216,7 @@ $border-tooltip-color: #a6a6a7
 .page-section__title
 	color    : $blue-color
 	font-size: 1.375em
-	margin   : 9.4% auto 5.5%
+	margin   : 0 auto 5.5%
 
 .page-section__title__icon
 	height  : 78px
@@ -298,6 +298,14 @@ $border-tooltip-color: #a6a6a7
 	border : 4px solid $blue-color
 
 //Page section
+.page-section_button--agencias
+	margin: 10px 30px 0 0
+	+opacity(1)
+	+transition(all 500ms ease)
+	
+	&:hover
+		+opacity(0.8)
+
 .page-section__buttons--share
 	background-color: transparent
 	border          : none
@@ -384,20 +392,23 @@ $border-tooltip-color: #a6a6a7
 
 
 /************* $QUERIES **************/
-@media screen and (max-width : 800px)
+@media screen and (min-width : 321px) and (max-width : 780px)
 
 	.page-wrapper
 		width : 100%
 
+	.page-section
+		height: 1100px !important
+
 	.main-header__title
 		&:after,&:before
-			width: 28%
+			width: 90px
 
 	.main-nav__producto
 		height       : 200px
 		margin-bottom: 30px
 		width        : 200px
-		padding      : 22% 5% 0
+		padding      : 30% 5% 0
 
 	.main-nav__producto__img
 		top : 35%

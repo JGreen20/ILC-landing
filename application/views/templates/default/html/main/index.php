@@ -7,7 +7,7 @@
 
 		<header class="main-header">
 			<h1 class="main-header__logo">
-				<a href="index.html">
+				<a href="index.php">
 					<img src="<?php echo base_url(); ?>assets/images/logo.png" class="img-responsive" alt="">
 				</a>
 			</h1> <!-- /.main-header__logo -->
@@ -51,14 +51,37 @@
 			<li class="col-xs-3  bg-purple"></li>
 			<li class="col-xs-3  bg-green"></li>
 		</ul> <!-- /page-section__color-lines -->
+
+		<!-- Modal -->
+		<div class="modal fade" id="likeModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+			<div class="modal-dialog  modal-dialog-style">
+				<div class="modal-content  modal-content--borderblue">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+						<h4 class="modal-title" id="myModalLabel">Te gusta : mueve !</h4>
+					</div> <!-- /modal-header -->
+					<div class="modal-body">
+						Había un perro que se llamaba chiste lo atropellaron y se acabó el chiste.
+						Dale me gusta <a href="#">aquí</a> si deseas reirte.
+					</div> <!--/modal-body  -->
+				</div> <!--/modal-content  -->
+			</div> <!--/modal-dialog  -->
+		</div> <!-- /modal -->
 	</section> <!-- / page section -->
 
 	<section class="page-section">
 		<div class="page-section__form  text-center">
-			<a class="page-section__form__arrow bg-semicircle-blue" href="#landingPage">
+			<a class="page-section__form__arrow bg-semicircle-blue" href="#">
 				<img src="<?php echo base_url(); ?>assets/images/arrows-up.png" alt="" />
 			</a> <!-- /page-section__form__arrow -->
 		</div> <!-- /page-section__form -->
+
+		<a id="js-agencias" class="page-section_button--agencias  block  pull-right" href="http://bit.ly/ILC_agencias" target="_blank">
+			<img src="<?php echo base_url(); ?>assets/images/agencias.png" alt="" class="img-responsive" />
+		</a> <!-- end js-agencias  -->
+
+		<div class="clearfix"></div> <!-- /clearfix -->
+
 
 		<div class="slide  active" data-anchor="slide1">
 			<h2 class="page-section__title  text-uppercase  text-center">
@@ -77,7 +100,7 @@
 					</p> <!-- / page-section__text--blue-->
 				</div> <!-- /col-xs-6 -->
 				<div class="col-xs-6  text-center">
-					<iframe width="327" height="175" src="https://www.youtube.com/v/XGSy3_Czz8k"></iframe>
+					<img src="<?php echo base_url(); ?>assets/images/img-video.jpg" alt="" class="img-responsive" />
 				</div> <!-- / col-xs-6-->
 			</div> <!-- end row -->
 
@@ -150,7 +173,7 @@
 					</p> <!-- / page-section__text--blue-->
 				</div> <!-- /col-xs-6 -->
 				<div class="col-xs-6  text-center">
-					<iframe width="327" height="175" src="https://www.youtube.com/v/XGSy3_Czz8k"></iframe>
+					<img src="<?php echo base_url(); ?>assets/images/img-video.jpg" alt="" class="img-responsive" />
 				</div> <!-- / col-xs-6-->
 			</div> <!-- end row -->
 
@@ -223,7 +246,7 @@
 					</p> <!-- / page-section__text--blue-->
 				</div> <!-- /col-xs-6 -->
 				<div class="col-xs-6  text-center">
-					<iframe width="327" height="175" src="https://www.youtube.com/v/XGSy3_Czz8k"></iframe>
+					<img src="<?php echo base_url(); ?>assets/images/img-video.jpg" alt="" class="img-responsive" />
 				</div> <!-- / col-xs-6-->
 			</div> <!-- end row -->
 
@@ -296,7 +319,7 @@
 					</p> <!-- / page-section__text--blue-->
 				</div> <!-- /col-xs-6 -->
 				<div class="col-xs-6  text-center">
-					<iframe width="327" height="175" src="https://www.youtube.com/v/XGSy3_Czz8k"></iframe>
+					<img src="<?php echo base_url(); ?>assets/images/img-video.jpg" alt="" class="img-responsive" />
 				</div> <!-- / col-xs-6-->
 			</div> <!-- end row -->
 

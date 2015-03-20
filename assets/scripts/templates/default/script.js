@@ -3,8 +3,11 @@ var j = jQuery.noConflict();
 (function ($){
 	j(document).on('ready',function(){
 
-		//Call to widthBrowser Function
+		//Call width resizer
 		widthBrowser();
+
+		//Open modal Like
+		j('#likeModal').modal('show');
 
 		//Full Page script
 		j('#landing-page').fullpage({
@@ -18,26 +21,37 @@ var j = jQuery.noConflict();
 			//Scrolling
 			autoScrolling                    : false,
 			fitToSection                     : false,
-			normalScrollElementTouchThreshold: 5,
 			scrollingSpeed                   : 900,
 			scrollOverflow                   : false,
+			scrollBar                        : false,
 
 			//Accessibility
 		    keyboardScrolling                : false,
-		    animateAnchor                    : false,
-		    recordHistory                    : false,
 
 			//Custom selectors
 			sectionSelector                  : '.page-section',
 			slideSelector                    : '.slide',
 
 			//Design
-			fixedElements                    : '#formularyModal,.modal,#result',
-	    responsive                       : 2000,
+			fixedElements                    : '#likeModal,#formularyModal,.modal,#result',
+	        responsive                       : 2000,
 		});
+
+		//NiceScroll
+		j("html").niceScroll({
+			cursorwidth      : "5px",  // - cursor width in pixel, default is 5 (you can write "5px" too)
+			enablemousewheel : true,  //nicescroll can manage mouse wheel events (default:true)
+			enablekeyboard   : false,  //nicescroll can manage keyboard events (default:true)
+		});
+
+		//Hide second section
+		j('section.page-section:eq(1)').css({'display':'none'});
 
 		//Click Navigation to Slide
 		j('a.main-nav__producto').on('click',function(){
+
+			//Show second section
+			j('section.page-section:eq(1)').css({'display':'block'});
 
 			var widthPage = j('.page-wrapper').width();
 			var slideto = j(this).data('index');
@@ -56,7 +70,22 @@ var j = jQuery.noConflict();
 
 			setTimeout(function(){
 				$.fn.fullpage.moveSectionDown();
+				$( "#html" ).scroll(function() {
+					return false;
+				});
 			},700);
+
+		});
+
+		//Hold click by default href
+		j('a.page-section__nav__item,a.page-section__steps__item').on('click',function(event){
+			event.preventDefault();
+		});
+
+		//Click arrow up
+		j('a.page-section__form__arrow').on('click',function(e){
+			e.preventDefault();
+			$.fn.fullpage.moveSectionUp();
 		});
 
 		//Controls for Page and Navigation
@@ -85,16 +114,12 @@ var j = jQuery.noConflict();
 			j(line).switchClass( "", "active", 900, "easeInOutQuad" );
 		});
 
-		//Hold click
-		j('a.page-section__nav__item,a.page-section__steps__item').on('click',function(event){
-			event.preventDefault();
-		});
-
 		//ToolTip
 		j('[data-toggle="tooltip"]').tooltip({
 			trigger : 'hover focus',
 			delay   : { "show": 50, "hide": 50 }
 		});
+
 
 		/*******************************************************************/
 		/* SHARE FACEBOOK BUTTON  ******************************************/
@@ -192,7 +217,7 @@ var j = jQuery.noConflict();
 			spinner.spin(target);
 
       // Get the form instance
-      var $form = j(e.target);
+      	var $form = j(e.target);
 
 			var $this = j(this);
 			var dataArray = $form.serializeArray();
@@ -237,7 +262,7 @@ var j = jQuery.noConflict();
         });
 
 		/*******************************************************************/
-		/* Resetear los campos en el modal**********************************/
+		/* Resetear los campos en el modal         *************************/
 		/*******************************************************************/
 		j('#formularyModal').on('hide.bs.modal', function() {
 			$(this).find('form')[0].reset();
@@ -248,7 +273,12 @@ var j = jQuery.noConflict();
 			j('#js-frm-register').formValidation('resetForm', true);
 		});
 
-		//On resiize Window
+		//On load Window
+		j(window).on('load',function(){
+			widthBrowser();
+		});
+
+		//On resize Window
 		j(window).on('resize',function(){
 			widthBrowser();
 		});
@@ -302,12 +332,12 @@ var j = jQuery.noConflict();
 /*************************************************************************/
 
 function widthBrowser(){
-	if (j(window).width() <= 800) {
+	if (j(window).width() > 320 && j(window).width() <= 780) {
 		j('.main-nav li').removeClass('col-xs-3').addClass('col-xs-6');
-		//j('.page-section__steps li').removeClass('col-xs-3').addClass('col-xs-6');
+		j('.page-section__steps li').removeClass('col-xs-3').addClass('col-xs-6');
 	}
 	else{
 		j('.main-nav li').removeClass('col-xs-6').addClass('col-xs-3');
-		//j('.page-section__steps li').removeClass('col-xs-6').addClass('col-xs-3');
+		j('.page-section__steps li').removeClass('col-xs-6').addClass('col-xs-3');
 	}
 }

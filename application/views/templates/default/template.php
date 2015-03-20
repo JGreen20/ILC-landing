@@ -2,7 +2,7 @@
 <html lang="es">
     <head>
         <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <!--meta name="viewport" content="width=device-width, initial-scale=1.0" /-->
         <meta name="description" content="<?php echo $this->config->item('cms_site_desc'); ?>" />
         <meta name="author" content="" />
         <link rel="shortcut icon" href="<?php echo base_url(); ?>assets/images/ico/favicon.png" />
@@ -31,6 +31,8 @@
                     xfbml      : true,
                     version    : 'v2.1'
                 });
+
+                FB.Canvas.setSize({ height: 1000 });
             };
 
             (function(d, s, id){
