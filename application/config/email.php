@@ -1,6 +1,10 @@
 <?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
+<<<<<<< HEAD
 $config['protocol']  = 'smto';
+=======
+$config['protocol']  = 'smtp';
+>>>>>>> origin/master
 $config['smtp_host'] = 'rsb29.rhostbh.com';
 //$config['smtp_host'] = 'ssl://smtp.gmail.com';
 $config['smtp_user'] = 'no-reply@ad-inspector.com';

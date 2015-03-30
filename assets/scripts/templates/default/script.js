@@ -3,6 +3,12 @@ var j = jQuery.noConflict();
 (function ($){
 	j(document).on('ready',function(){
 
+<<<<<<< HEAD
+=======
+		//Call width resizer
+		widthBrowser();
+
+>>>>>>> origin/master
 		//Open modal Like
 		j('#likeModal').modal('show');
 
@@ -30,7 +36,11 @@ var j = jQuery.noConflict();
 			slideSelector                    : '.slide',
 
 			//Design
+<<<<<<< HEAD
 			//fixedElements                    : '#likeModal,#formularyModal,.modal,#result',
+=======
+			fixedElements                    : '#likeModal,#formularyModal,.modal,#result',
+>>>>>>> origin/master
 	        responsive                       : 2000,
 		});
 
@@ -118,6 +128,16 @@ var j = jQuery.noConflict();
 		});
 
 
+<<<<<<< HEAD
+=======
+		/*******************************************************************/
+		/* SHARE FACEBOOK BUTTON  ******************************************/
+		/*******************************************************************/
+		j('.js-share-fb').on('click',function(event){
+			event.preventDefault();
+			facebookShare();
+		});
+>>>>>>> origin/master
 
 		/*******************************************************************/
 		/* FORM VALIDATION *************************************************/
@@ -265,12 +285,20 @@ var j = jQuery.noConflict();
 
 		//On load Window
 		j(window).on('load',function(){
+<<<<<<< HEAD
 			//widthBrowser();
+=======
+			widthBrowser();
+>>>>>>> origin/master
 		});
 
 		//On resize Window
 		j(window).on('resize',function(){
+<<<<<<< HEAD
 			//widthBrowser();
+=======
+			widthBrowser();
+>>>>>>> origin/master
 		});
 
 		opts = {
@@ -296,6 +324,7 @@ var j = jQuery.noConflict();
     spinner = new Spinner(opts);
 	});
 
+<<<<<<< HEAD
 	/*******************************************************************/
 	/* SHARE FACEBOOK BUTTON  ******************************************/
 	/*******************************************************************/
@@ -345,6 +374,13 @@ var j = jQuery.noConflict();
 			'caption'        : "Inversiones la Cruz",
 
 
+=======
+	//FACEBOOK LOGIN
+	function facebookShare(){
+		var wallPost = {
+			'message'        : 		'¡A cuidar nuestros #DetallesqueSeducen!',
+			'picture'        :    'http://adinspector.com.co/app/preguntalejh/images/post.jpg'
+>>>>>>> origin/master
 		};
 		FB.login(function(){
 			FB.api('/me/feed', 'post', wallPost, function(response) {
@@ -365,3 +401,16 @@ var j = jQuery.noConflict();
 /***********************   FUNCTIONS   ***********************************/
 /*************************************************************************/
 
+<<<<<<< HEAD
+=======
+function widthBrowser(){
+	if (j(window).width() > 320 && j(window).width() <= 780) {
+		j('.main-nav li').removeClass('col-xs-3').addClass('col-xs-6');
+		j('.page-section__steps li').removeClass('col-xs-3').addClass('col-xs-6');
+	}
+	else{
+		j('.main-nav li').removeClass('col-xs-6').addClass('col-xs-3');
+		j('.page-section__steps li').removeClass('col-xs-6').addClass('col-xs-3');
+	}
+}
+>>>>>>> origin/master

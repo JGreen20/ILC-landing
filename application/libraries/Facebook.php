@@ -229,6 +229,7 @@ class Facebook
 		return $response;
 	}
 
+<<<<<<< HEAD
 	public function publishPost()
 	{
 		try {
@@ -262,5 +263,7 @@ class Facebook
 		//return FALSE;
 	}
 	
+=======
+>>>>>>> origin/master
 }
 

@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 @import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700)
+=======
+@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700)
+>>>>>>> origin/master
 @import "compass/css3/"
 @import "compass/css3/opacity"
 @import "compass/css3/transition"
@@ -108,8 +112,13 @@ $border-tooltip-color: #a6a6a7
 	background     : url('../../../../images/fondo.png') no-repeat
 	background-size: 100% 100%
 	height         : 1000px !important
+<<<<<<< HEAD
 	position       : relative 
 	overflow       : hidden 
+=======
+	position       : relative
+	overflow       : hidden
+>>>>>>> origin/master
 
 //Tooltip
 .tooltip
@@ -160,10 +169,17 @@ $border-tooltip-color: #a6a6a7
 	color          : transparent
 	display        : block
 	font-size      : 1.125em
+<<<<<<< HEAD
 	height         : 151px 
 	line-height    : 23px
 	margin         : 0 auto
 	padding        : 25% 5% 0 
+=======
+	height         : 151px
+	line-height    : 23px
+	margin         : 0 auto
+	padding        : 25% 5% 0
+>>>>>>> origin/master
 	position       : relative
 	text-decoration: none !important
 	width          : 151px
@@ -216,7 +232,11 @@ $border-tooltip-color: #a6a6a7
 .page-section__title
 	color    : $blue-color
 	font-size: 1.375em
+<<<<<<< HEAD
 	margin   : 9.4% auto 5.5%
+=======
+	margin   : 0 auto 5.5%
+>>>>>>> origin/master
 
 .page-section__title__icon
 	height  : 78px
@@ -226,7 +246,11 @@ $border-tooltip-color: #a6a6a7
 
 	img
 		height : 40px
+<<<<<<< HEAD
 	
+=======
+
+>>>>>>> origin/master
 .page-section__description
 	align-items: center
 	display    : flex
@@ -236,7 +260,11 @@ $border-tooltip-color: #a6a6a7
 .page-section__steps
 	width : 95%
 	margin: 6% auto 0
+<<<<<<< HEAD
  
+=======
+
+>>>>>>> origin/master
 .page-section__steps__item
 	height  : 170px
 	margin  : 0 auto
@@ -271,7 +299,11 @@ $border-tooltip-color: #a6a6a7
 		img
 			+opacity(0)
 
+<<<<<<< HEAD
 /*ul*/ 
+=======
+/*ul*/
+>>>>>>> origin/master
 .page-section__color-lines
 	bottom  : 0
 	margin  : 0 auto
@@ -298,6 +330,17 @@ $border-tooltip-color: #a6a6a7
 	border : 4px solid $blue-color
 
 //Page section
+<<<<<<< HEAD
+=======
+.page-section_button--agencias
+	margin: 10px 30px 0 0
+	+opacity(1)
+	+transition(all 500ms ease)
+	
+	&:hover
+		+opacity(0.8)
+
+>>>>>>> origin/master
 .page-section__buttons--share
 	background-color: transparent
 	border          : none
@@ -325,7 +368,11 @@ $border-tooltip-color: #a6a6a7
 	color : $gray-black-color !important
 
 .page-section__title__icon--margin
+<<<<<<< HEAD
 	margin : 0 auto 10px 
+=======
+	margin : 0 auto 10px
+>>>>>>> origin/master
 
 .page-section__text--blue
 	color      : $blue-color
@@ -375,6 +422,7 @@ $border-tooltip-color: #a6a6a7
 	background-position: -510px -510px
 
 
+<<<<<<< HEAD
 /************* $QUERIES **************/
 
 @media screen and (max-width : 800px)
@@ -383,3 +431,47 @@ $border-tooltip-color: #a6a6a7
 	.modal-dialog-style
 		margin : 25% auto 0 !important
 		width  : auto
+=======
+/******************* IDS ****************/
+#spin
+	left: 50%
+	position: fixed
+	top: 50%
+	z-index: 9999
+
+
+/************* $QUERIES **************/
+@media screen and (min-width : 321px) and (max-width : 780px)
+
+	.page-wrapper
+		width : 100%
+
+	.page-section
+		height: 1100px !important
+
+	.main-header__title
+		&:after,&:before
+			width: 90px
+
+	.main-nav__producto
+		height       : 200px
+		margin-bottom: 30px
+		width        : 200px
+		padding      : 30% 5% 0
+
+	.main-nav__producto__img
+		top : 35%
+
+	//Page section
+	.page-section__description
+		padding : 0
+
+	.page-section__nav__item
+		font-size: 0.8125em
+		height   : 80px
+		width    : 80px
+
+	//Modal
+	.modal-dialog-style
+		margin : 25% auto 0 !important
+>>>>>>> origin/master

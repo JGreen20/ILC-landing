@@ -342,9 +342,13 @@ FileETag none
 # FollowSymLinks must be enabled for this to work.
 
 <IfModule mod_rewrite.c>
+<<<<<<< HEAD
 # For security reasons, Option followsymlinks cannot be overridden.
 #  Options +FollowSymlinks
   Options +SymLinksIfOwnerMatch
+=======
+  Options +FollowSymlinks
+>>>>>>> origin/master
   RewriteEngine On
 </IfModule>
 
@@ -560,10 +564,17 @@ AddCharset utf-8 .css .js .xml .json .rss .atom
     RewriteEngine on
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteCond %{REQUEST_FILENAME} !-d
+<<<<<<< HEAD
   #  RewriteRule ^(.*)$ /proyectos/app/ilcapp/index.php/$1 [L]
      RewriteRule ^(.*)$ /ilcapp/index.php/$1 [L]
 </IfModule>
 <IfModule !mod_rewrite.c>
   #  ErrorDocument 404 /proyectos/app/ilcapp/index.php
     ErrorDocument 404 /ilcapp/index.php
+=======
+    RewriteRule ^(.*)$ /proyectos/app/ilcapp/index.php/$1 [L]
+</IfModule>
+<IfModule !mod_rewrite.c>
+    ErrorDocument 404 /proyectos/app/ilcapp/index.php
+>>>>>>> origin/master
 </IfModule>
