@@ -229,7 +229,6 @@ class Facebook
 		return $response;
 	}
 
-<<<<<<< HEAD
 	public function publishPost()
 	{
 		try {
@@ -238,9 +237,9 @@ class Facebook
 				  * Retrieve User’s Profile Information
 				  */
 				// Graph API to request user data
-				$request = new FacebookRequest( 
-					$this->session, 
-					'POST', 
+				$request = new FacebookRequest(
+					$this->session,
+					'POST',
 					'/me/feed',
 					array(
 						'message' => 'Este mensaje es de test',
@@ -250,7 +249,7 @@ class Facebook
 				// Get response as an array
 				//$user = $request->getGraphObject(GraphUser::className());
 				$response = $request->execute();
-				$graphObject = $response->getGraphObject();	
+				$graphObject = $response->getGraphObject();
 				//return $user;
 			}
 		} catch( FacebookRequestException $ex ) {
@@ -262,8 +261,4 @@ class Facebook
 		}
 		//return FALSE;
 	}
-	
-=======
->>>>>>> origin/master
 }
-
