@@ -10,18 +10,20 @@ $config['last_tag_open'] = '<li>';
 $config['last_tag_close'] = '</li>';
 
 // Next Link
-$config['next_link'] = '<i class="fa fa-chevron-right"></i>';
+$config['next_link'] = '<i class="fa fa-angle-right"></i>';
 $config['next_tag_open'] = '<li class="next">';
 $config['next_tag_close'] = '</li>';
 
 // Previous Link
-$config['prev_link'] = '<i class="fa fa-chevron-left"></i>';
+$config['prev_link'] = '<i class="fa fa-angle-left"></i>';
 $config['prev_tag_open'] = '<li class="prev">';
 $config['prev_tag_close'] = '</li>';
 
 // Current Link
-$config['cur_tag_open'] = '<li class="active"><a href="#">';
-$config['cur_tag_close'] = '</a></li>';
+$config['cur_tag_open'] = '<li class="active"><span>';
+//$config['cur_tag_open'] = '<li class="active"><a href="#">';
+$config['cur_tag_close'] = '</span></li>';
+//$config['cur_tag_close'] = '</a></li>';
 
 // Digit Link
 $config['num_tag_open'] = '<li>';

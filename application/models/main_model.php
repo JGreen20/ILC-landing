@@ -54,5 +54,80 @@
       }
       return FALSE;
     }
+
+    public function getAll($city = 0, $limit = 0, $offset = 0)
+    {
+      $result = array();
+      $res = FALSE;
+
+      if ((int)$city > 0)
+      {
+        $this->db->select('id, name, address, phone');
+        $this->db->where('id_ciudad', $city);
+        $result = $this->db->get('agencias', $limit, $offset);
+
+        if ($result->num_rows() > 0)
+        {
+          $res['data'] = $result->result();
+
+          $this->db->select('id');
+
+          $this->db->where('id_ciudad', $city);
+
+          $result = $this->db->get('agencias');
+          $res['num_rows'] = $result->num_rows();
+        }
+      }
+
+      return $res;
+    }
+
+    public function get($table = '', $select = '', $where = array())
+    {
+      $table = (empty($table)) ? $this->mytable : $table;
+
+      if (!empty($select))
+      {
+        $this->db->select($select);
+      }
+
+      if (count($where))
+      {
+        $this->db->where($where);
+      }
+
+      $result = $this->db->get($table);
+
+      if ($result->num_rows() > 0)
+      {
+        return $result->result();
+      }
+
+      return FALSE;
+    }
+
+    public function getRow($table = '', $select = '', $where = array())
+    {
+      $table = (empty($table)) ? $this->mytable : $table;
+
+      if (!empty($select))
+      {
+        $this->db->select($select);
+      }
+
+      if (count($where))
+      {
+        $this->db->where($where);
+      }
+
+      $result = $this->db->get($table);
+
+      if ($result->num_rows() > 0)
+      {
+        return $result->row();
+      }
+
+      return FALSE;
+    }
   }
 

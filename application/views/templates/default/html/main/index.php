@@ -50,9 +50,8 @@
 			<div class="modal-content">
 				<div class="modal-header">
 			        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">[cerrar]</span></button>
-			        <h4 class="modal-title text-center" id="modalLikeLabel">
-						<img class="img-responsive" src="<?php echo base_url(); ?>assets/images/logo.png" alt="Inversiones La Cruz" />
-					</h4>
+			        <h4 class="modal-title text-center" id="modalLikeLabel">Bienvenido a</h4>
+					<img class="img-responsive" src="<?php echo base_url(); ?>assets/images/logo-modal.png" alt="Inversiones La Cruz" />
 	      		</div><!-- end modal-header -->
 				<div class="modal-body">
 					<p class="text-center">

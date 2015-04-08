@@ -1,8 +1,8 @@
 <aside class="bar-options">
 	<ul>
-		<li class="text-center"><a href="main/getMaps" class="bar-options__link bar-options__link--agencia js-links">Agencias</a></li>
-		<li class="text-center"><a href="#" class="bar-options__link bar-options__link--share js-share-fb" data-post="post-2">Compartir</a></li>
-		<li class="text-center"><a href="#" class="bar-options__link bar-options__link--solicitar" data-toggle="modal" data-target="#frmRegister">Solicitar</a></li>
+		<li><a href="main/getMaps" class="bar-options__link bar-options__link--agencia js-links">Agencias</a></li>
+		<li><a href="#" class="bar-options__link bar-options__link--share js-share-fb" data-post="post-2">Compartir</a></li>
+		<li><a href="#" class="bar-options__link bar-options__link--solicitar" data-toggle="modal" data-target="#frmRegister">Solicitar</a></li>
 	</ul>
 </aside><!-- end bar-options -->
 
@@ -28,11 +28,11 @@
 
 	<main class="content">
 		<figure class="content__icon content__icon--prendatodo text-hide">Prendatodo</figure>
-		<h2 class="content__title text-center">CRÉDITOS CON <span>GARANTÍA EN ARTÍCULOS</span></h2>
+		<h2 class="content__title text-center">CRÉDITOS CON <span>GARANTÍA EN ARTÍCULOS PRENDATODO</span></h2>
 
 		<section class="content__desc">
 			<div class="content__desc__text">
-				<p>Inversiones La Cruz le brinda acceso a la más rápida y confiable forma de financiamiento del mercado. Con solo presentar su DNI y un artículo en garantía(laptops,celulares,TV,tablets,cámaras y más) podrá acceder a un crédito inmediato y seguro.</p>
+				<p>Inversiones La Cruz le brinda acceso a la más rápida y confiable forma de financiamiento del mercado. Con sólo presentar su DNI y un artículo en garantía(laptops, celulares, TV, tablets, y más) podrá acceder a un crédito inmediato y seguro.</p>
 			</div><!-- end content__desc__text -->
 			<figure class="content__desc__video">
 				<img class="img-responsive" src="<?php echo base_url(); ?>assets/images/bg-video.png" />
@@ -40,7 +40,7 @@
 		</section><!-- end content__desc -->
 
 		<section class="content__info">
-			<h3 class="content__info__title text-center text-uppercase">¿Como lo hago?</h3>
+			<h3 class="content__info__title text-center text-uppercase">¿Cómo lo hago?</h3>
 
 			<ul class="content__info__list list-inline text-center">
 				<li>

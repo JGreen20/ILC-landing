@@ -10,7 +10,7 @@
         <title><?php echo (isset($_title)) ? $_title . ' | ' : ''; ?><?php echo $this->config->item('cms_site_name'); ?></title>
 
         <!-- Font awesome -->
-        <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet" />
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" />
 
         <!-- Bootstrap core CSS -->
         <?php echo $_css; ?>
@@ -44,8 +44,7 @@
             }(document, 'script', 'facebook-jssdk'));
         </script>
 
-
-        <div id="spin"></div><!-- end #spin -->
+        <div id="js-loading" class="loading"><img src="<?php echo base_url(); ?>assets/images/loading.gif" /></div><!-- end #spin -->
 
         <div class="page-wrapper">
             <?php foreach($_content as $_view): ?>
@@ -119,6 +118,13 @@
                                 </div> <!--/form-group select ciudad-->
                         <?php endif; ?>
 
+                        <div class="form-group">
+                            <label for="customer_message" class="col-xs-4 control-label">Mensaje:</label>
+                            <div class="col-xs-8">
+                                <textarea class="form-control" name="customer_message" id="customer_message"></textarea>
+                            </div> <!--/col-xs-8 -->
+                        </div> <!-- /form-group tel-->
+
                         <!-- Submit Button -->
                         <div class="form-group text-center">
                             <button type="submit" class="btn btn-primary">Enviar</a>
@@ -129,6 +135,34 @@
                 </div> <!--/modal-content  -->
             </div> <!--/modal-dialog  -->
         </div> <!-- /modal -->
+
+        <div class="modal fade modal-like" id="js-gracias" tabindex="-1" role="dialog" aria-labelledby="modalGraciasLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">[cerrar]</span></button>
+                        <h4 class="modal-title text-center modal-title--large" id="modalGraciasLabel">¡Gracias!</h4>
+                    </div>
+                    <div class="modal-body">
+                        <p class="text-center">Tu solicitud estará siendo enviada a uno de nuestro ejecutivos de ventas el cual se contactará contigo para darte ms detalles del servicios de tu interés.</p>
+                    </div>
+                </div><!-- /.modal-content -->
+            </div><!-- /.modal-dialog -->
+        </div><!-- /.modal -->
+
+        <div class="modal fade modal-like" id="js-share" tabindex="-1" role="dialog" aria-labelledby="modalGraciasLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">[cerrar]</span></button>
+                        <h4 class="modal-title text-center modal-title--large" id="modalGraciasLabel">¡Gracias!</h4>
+                    </div>
+                    <div class="modal-body">
+                        <p class="text-center">Modificar texto luego de compartir post.</p>
+                    </div>
+                </div><!-- /.modal-content -->
+            </div><!-- /.modal-dialog -->
+        </div><!-- /.modal -->
 
         <!-- Load Javascript -->
 		<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>

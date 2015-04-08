@@ -1,8 +1,8 @@
 <aside class="bar-options">
 	<ul>
-		<li class="text-center"><a href="main/getMaps" class="bar-options__link bar-options__link--agencia js-links">Agencias</a></li>
-		<li class="text-center"><a href="#" class="bar-options__link bar-options__link--share js-share-fb" data-post="post-1">Compartir</a></li>
-		<li class="text-center"><a href="#" class="bar-options__link bar-options__link--solicitar" data-toggle="modal" data-target="#frmRegister">Solicitar</a></li>
+		<li><a href="main/getMaps" class="bar-options__link bar-options__link--agencia js-links">Agencias</a></li>
+		<li><a href="#" class="bar-options__link bar-options__link--share js-share-fb" data-post="post-1">Compartir</a></li>
+		<li><a href="#" class="bar-options__link bar-options__link--solicitar" data-toggle="modal" data-target="#frmRegister">Solicitar</a></li>
 	</ul>
 </aside><!-- end bar-options -->
 
@@ -40,7 +40,7 @@
 		</section><!-- end content__desc -->
 
 		<section class="content__info">
-			<h3 class="content__info__title text-center text-uppercase">¿Como lo hago?</h3>
+			<h3 class="content__info__title text-center text-uppercase">¿Cómo lo hago?</h3>
 
 			<ul class="content__info__list list-inline text-center">
 				<li>

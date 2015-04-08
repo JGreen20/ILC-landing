@@ -14,13 +14,6 @@ $blue-color          : #385fa3
 $text-tooltip-color  : #535353
 $border-tooltip-color: #a6a6a7
 
-//Display
-// .block
-// 	display : block
-//
-// .in_block
-// 	display : inline-block !important
-
 /* ------------------------------------ *\
 					TAGS
 //\* ---------------------------------- */
@@ -64,24 +57,6 @@ body
 .bg-steps
 	background     : url('../../../../images/sprite.png') no-repeat
 
-//Height
-// .full-height
-// 	height : 100%
-
-//Arrows Navigation slide
-// .fp-controlArrow
-// 	display : none
-
-//Textos
-// .text-bold
-// 	font-weight : bold
-//
-// .text-semibold
-// 	font-weight: 600
-//
-// .textcenter
-// 	text-align : center !important
-
 //Page-wrapper
 .page-wrapper
 	background: white url('../../../../images/bg.png') 0 0 no-repeat
@@ -92,12 +67,13 @@ body
 
 //Page-section
 .page-section
-	position       : relative
+	//position       : relative
 	width: 100%
 
 //Tooltip
 .tooltip
 	margin-top : -10px !important
+	z-index: 9999
 
 	.tooltip-arrow
 		border-bottom-color : white !important
@@ -109,10 +85,11 @@ body
 		color           : $text-tooltip-color
 		font-family     : 'Source Sans Pro', sans-serif
 		font-size       : 13px
-		font-weight     : 400
+		font-weight     : 300
 		line-height     : 15px
-		padding         : 14px 8px
-		width           : 131px
+		min-height: 62px
+		padding         : 10px
+		width           : 550px !important
 
 
 
@@ -166,6 +143,20 @@ body
 	font-size : 1.222em
 
 
+
+
+
+
+
+/* ------------------------------------ *\
+			$LOADING
+//\* ---------------------------------- */
+.loading
+	display: none
+	position: absolute
+	left: 50%
+	top: 40%
+	z-index: 9999
 
 
 
@@ -237,25 +228,33 @@ body
 		border-bottom: none
 		padding: 50px 80px 20px
 		position: relative
+		img
+			margin: 0 auto
 		.close
 			background-color: $blue-color
 			color: white
 			float: none
-			font-size: 1.125em
-			font-weight: 600
+			font-size: 0.875em
+			font-weight: 300
 			line-height: 1em
 			+opacity(1)
 			padding: 10px 10px 15px
 			position: absolute
 			right: -7px
-			top: -43px
-			color: white
+			top: -37px
+		.modal-title
 			font-size: 1.25em
+			font-weight: 600
+			text-transform: uppercase
+		.modal-title--large
+			font-size: 2.625em
 	.modal-body
+		padding: 15px 80px 50px
 		.strong
 			display: block
 			font-size: 1.2em
 			font-weight: 600
+			text-transform: uppercase
 		.underline
 			font-weight: 600
 			text-decoration: underline
@@ -321,6 +320,7 @@ body
 		font-size: 1.5em
 		font-weight: 700
 .content__desc
+	margin-bottom: 30px
 	margin-top: 40px
 	padding-left: 30px
 	padding-right: 30px
@@ -356,7 +356,10 @@ body
 	img
 		+transition(all 0.2s ease)
 		+scale(1)
-
+.content__logo
+	img
+		margin: 0 auto
+		width: 30%
 
 
 
@@ -382,30 +385,31 @@ body
 	font-weight: 700
 	text-transform: uppercase
 	+transition(all 0.2s ease)
-	&::after
+	&::before
 		background-image: url("../../../../images/sprite.png")
 		content: ""
-		display: block
+		display: inline-block
 		height: 55px
 		margin: 0 auto
+		vertical-align: middle
 		width: 60px
 	&.bar-options__link--agencia
-		&::after
+		&::before
 			background-position: 0 -313px
 		&:hover
-			&::after
+			&::before
 				background-position: 0 -258px
 	&.bar-options__link--share
-		&::after
+		&::before
 			background-position: -60px -313px
 		&:hover
-			&::after
+			&::before
 				background-position: -60px -258px
 	&.bar-options__link--solicitar
-		&::after
+		&::before
 			background-position: -120px -313px
 		&:hover
-			&::after
+			&::before
 				background-position: -120px -258px
 	&:hover
 		font-size: 0.75em
@@ -415,51 +419,100 @@ body
 
 
 
+/* ------------------------------------ *\
+				$FRM
+//\* ---------------------------------- */
+.frm_group
+	margin-top: 50px
+	padding: 0 160px
+.frm_select
+	border: 6px solid $blue-color
+	color: #717171
+	font-size: 1.5em
+	font-weight: 300
+	height: auto
+
+
+
+
+
+/* ------------------------------------ *\
+				$AGENCIAS
+//\* ---------------------------------- */
+.content__agencias
+	margin-top: 30px
+	padding-left: 50px
+	padding-right: 50px
+.content__agencias__title
+	color: $blue-color
+	font-size: 1.625em
+	font-weight: 700
+	margin-bottom: 40px
+.content__agencias__item
+	background-color: #f8f8f8
+	+border-radius(10px)
+	display: inline-block
+	margin-bottom: 20px
+	margin-right: 5px
+	min-height: 157px
+	padding: 30px 10px
+	position: relative
+	vertical-align: top
+	width: 32.5%
+	&:nth-of-type(3n)
+		margin-right: 0
+.content__agencias__item__icon
+	background: transparent url('../../../../images/sprite.png') -93px 0 no-repeat
+	display: block
+	height: 40px
+	left: 40%
+	position: absolute
+	top: -20px
+	width: 40px
+.content__agencias__item__title
+	color: $blue-color
+	font-size: 1.125em
+	font-weight: 700
+	margin: 0 0 5px 0
+.content__agencias__item__content
+	color: $blue-color
+	font-size: 0.875em
+	line-height: 1.29em
+	margin: 0
+.content__logo
+	bottom: 30px
+	position: absolute
+	width: 100%
+.content__intro
+	color: #717171
+	font-size: 1.25em
+	font-weight: 300
+	margin-top: 110px
+	padding: 0 80px
+
+
+
+/* ------------------------------------ *\
+			$PAGINATION
+//\* ---------------------------------- */
+.pagination
+	margin: 0
+	li
+		display: inline-block
+		margin-right: 5px
+		&:last-child
+			margin-right: 0
+			a, span
+				+border-radius(5px)
+		&:first-child
+			a, span
+				+border-radius(5px)
+		a, span
+			+border-radius(5px)
+
+
 
 
 /* ------------------------------------ *\
 			MEDIAS QUERIES
 //\* ---------------------------------- */
-@media screen and (max-width : 800px)
-	.modal-dialog-style
-		margin : 25% auto 0 !important
-		width  : auto
-
-	#spin
-		left: 50%
-		position: fixed
-		top: 50%
-		z-index: 9999
-
-@media screen and (min-width : 321px) and (max-width : 780px)
-	.page-wrapper
-		width : 100%
-
-	.page-section
-		height: 1100px !important
-
-	.main-header__title
-		&:after,&:before
-			width: 90px
-
-	.main-nav__producto
-		height       : 200px
-		margin-bottom: 30px
-		width        : 200px
-		padding      : 30% 5% 0
-
-	.main-nav__producto__img
-		top : 35%
-
-	//Page section
-	.page-section__description
-		padding : 0
-
-	.page-section__nav__item
-		font-size: 0.8125em
-		height   : 80px
-		width    : 80px
-
-	//Modal
-	.modal-dialog-style
-		margin : 25% auto 0 !important

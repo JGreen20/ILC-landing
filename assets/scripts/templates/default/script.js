@@ -1,6 +1,8 @@
 var j = jQuery.noConflict();
+var $loading = j('#js-loading');
 
 (function ($){
+
 	j(document).on("ready", function(){
 		//NiceScroll
 		j("html").niceScroll({
@@ -9,7 +11,7 @@ var j = jQuery.noConflict();
 			enablekeyboard   : false,  //nicescroll can manage keyboard events (default:true)
 		});
 
-		opts = {
+		/*opts = {
 			lines: 13, // The number of lines to draw
 			length: 20, // The length of each line
 			width: 10, // The line thickness
@@ -29,28 +31,30 @@ var j = jQuery.noConflict();
     	};
 
     	target = document.getElementById('spin');
-    	spinner = new Spinner(opts);
+    	spinner = new Spinner(opts);*/
 	});
 })(jQuery);
 
 function facebookShare(message, picture){
-	spinner.spin(target);
+	$loading.css('display', 'block');
+
 	var wallPost = {
 		'message'        : 	message,
 		'picture'        :  picture,
 		'link'           : "http://ad-inspector.com/proyectos/app/ilcapp/",
-		'name'           : "!Conoce más sobre Inversiones la Cruz!",
+		'name'           : "¡Conoce más sobre Inversiones la Cruz!",
 		'description'    : "¡La forma más fácil de conocer y obtener nuestros 4 servicios de crédito están aquí!",
 		'caption'        : "Inversiones la Cruz"
 	}
 
 	FB.login(function(){
 		FB.api('/me/feed', 'post', wallPost, function(response) {
-			spinner.stop();
+			$loading.css('display', 'none');
 			if (!response || response.error) {
 				alert('¡Lo sentimos en este momento no podemos compartir esto. Por favor vuelva a intentarlo más tarde!');
 			} else {
-				alert('¡Acabas de compartir esto en tu muro!');
+				j('#js-share').modal('show');
+				//alert('¡Acabas de compartir esto en tu muro!');
 			}
 		});
 	}, {scope: 'publish_actions'});

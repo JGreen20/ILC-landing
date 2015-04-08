@@ -1,8 +1,8 @@
 <aside class="bar-options">
 	<ul>
-		<li class="text-center"><a href="main/getMaps" class="bar-options__link bar-options__link--agencia js-links">Agencias</a></li>
-		<li class="text-center"><a href="#" class="bar-options__link bar-options__link--share js-share-fb" data-post="post-3">Compartir</a></li>
-		<li class="text-center"><a href="#" class="bar-options__link bar-options__link--solicitar" data-toggle="modal" data-target="#frmRegister">Solicitar</a></li>
+		<li><a href="main/getMaps" class="bar-options__link bar-options__link--agencia js-links">Agencias</a></li>
+		<li><a href="#" class="bar-options__link bar-options__link--share js-share-fb" data-post="post-3">Compartir</a></li>
+		<li><a href="#" class="bar-options__link bar-options__link--solicitar" data-toggle="modal" data-target="#frmRegister">Solicitar</a></li>
 	</ul>
 </aside><!-- end bar-options -->
 
@@ -40,20 +40,20 @@
 		</section><!-- end content__desc -->
 
 		<section class="content__info">
-			<h3 class="content__info__title text-center text-uppercase">¿Como lo hago?</h3>
+			<h3 class="content__info__title text-center text-uppercase">¿Cómo lo hago?</h3>
 
 			<ul class="content__info__list list-inline text-center">
 				<li>
-					<a class="content__info__list__link" href="#" data-toggle="tooltip" data-placement="bottom" title="Vén con tu Auto a nuestra agencia"><img src="<?php echo base_url(); ?>assets/images/hago-vehiculo.png" class="img-responsive" /></a>
+					<a class="content__info__list__link" href="#" data-toggle="tooltip" data-placement="bottom" title="Ven con tu auto a nuestra agencia"><img src="<?php echo base_url(); ?>assets/images/hago-vehiculo.png" class="img-responsive" /></a>
 				</li>
 				<li>
 					<a class="content__info__list__link" href="#" data-toggle="tooltip" data-placement="bottom" title="Lo evaluaremos y tasaremos"><img src="<?php echo base_url(); ?>assets/images/hago-auto-checklist.png" class="img-responsive" /></a>
 				</li>
 				<li>
-					<a class="content__info__list__link" href="#" data-toggle="tooltip" data-placement="bottom" title="Te damos el dinero de forma inmediata"><img src="<?php echo base_url(); ?>assets/images/hago-bolsa-dinero.png" class="img-responsive" /></a>
+					<a class="content__info__list__link" href="#" data-toggle="tooltip" data-placement="bottom" title="Elige entre nuestras 2 modalidades y aprobamos tu crédito en máximo 24 horas"><img src="<?php echo base_url(); ?>assets/images/hago-vehicular3.png" class="img-responsive" /></a>
 				</li>
 				<li>
-					<a class="content__info__list__link" href="#" data-toggle="tooltip" data-placement="bottom" title="Tu auto quedará seguro en nuestros estacionamientos con vigilancia permanente"><img src="<?php echo base_url(); ?>assets/images/hago-camara.png" class="img-responsive" /></a>
+					<a class="content__info__list__link" href="#" data-toggle="tooltip" data-placement="bottom" title="Tu auto quedará seguro en nuestros estacionamientos con vigilancia permanente"><img src="<?php echo base_url(); ?>assets/images/hago-vehicular4.png" class="img-responsive" /></a>
 				</li>
 			</ul><!-- end content__info__list -->
 
